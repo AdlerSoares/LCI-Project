@@ -1,0 +1,586 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 1auto;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #333;
+}
+
+header {
+    background-color: #ff7d31;
+    padding: 10px 0;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: white;
+    flex-wrap: wrap; /* Permite que os itens se ajustem em várias linhas se necessário */
+}
+
+.phone-number {
+    margin-left: 5px; /* Espaço entre o ícone e o número */
+    white-space: nowrap; /* Impede que o número quebre em várias linhas */
+    font-size: 14px; /* Tamanho de fonte base */
+    line-height: 1.5; /* Espaçamento vertical */
+    overflow: hidden; /* Impede o overflow se o número for muito longo */
+    text-overflow: ellipsis; /* Adiciona '...' se o texto for muito longo */
+}
+
+/* Media Query para telas menores */
+@media (max-width: 900px) {
+    .phone-number {
+        font-size: 0px; /* Tamanho de fonte menor em telas pequenas */
+        max-width: 0px; /* Limita a largura em telas pequenas */
+         /* Permite que o número quebre em várias linhas se necessário */
+    }
+    .phone-icon {
+
+        width: 0px; 
+        height: 0px;
+    }
+}
+
+.phone-icon {
+    margin-right: 5px; /* Espaço entre o ícone e o texto */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10%; /* Usar porcentagem para um padding mais responsivo */
+    background-color: #ffffff; /* Fundo neutro para a seção */
+}
+
+.logo {
+    max-width: 200px; /* Ajuste conforme o tamanho da sua logo */
+    width: 100%; /* Garante que a logo não exceda a largura do contêiner */
+}
+
+/* Media Query para telas menores */
+@media (max-width: 600px) {
+    .header-content {
+        flex-direction: column; /* Muda para coluna em telas menores */
+        padding: 20px 5%; /* Ajusta o padding para telas menores */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .logo {
+        max-width: 200px; /* Pode ajustar o tamanho da logo em telas pequenas */
+    }
+}
+.welcome-message {
+    font-size: 28px;
+    color: #01264b; /* Azul Marinho */
+    margin: 0; /* Remove margens padrão */
+}
+
+.button-container {
+    margin-top: 20px; /* Espaço acima dos botões */
+}
+
+.button {
+    display: inline-block;
+    background-color: #f5f5f5; /* Laranja Claro */
+    color: #01264b;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
+    margin-right: 10px; /* Espaço entre os botões */
+}
+
+.button:hover {
+    background-color: #f78132; /* Laranja Escuro ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento no botão */
+}
+
+nav {
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+nav ul {
+    list-style: none; /* Remove as marcas da lista */
+    padding: 0; /* Remove o padding padrão */
+    margin: 0; /* Remove a margem padrão */
+    display: flex; /* Usa flexbox para alinhar itens em linha */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    flex-wrap: wrap; /* Permite quebra de linha se necessário */
+}
+
+nav ul li {
+    margin: 0 20px; /* Espaçamento entre os itens */
+    display: flex; /* Usa flexbox para alinhar texto e imagem */
+    align-items: center; /* Alinha verticalmente o texto com a imagem */
+    position: relative; /* Necessário para o posicionamento do submenu */
+}
+
+nav ul li a {
+    color: white; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado */
+    font-weight: bold; /* Negrito */
+    display: flex; /* Usa flexbox para o alinhamento interno */
+    align-items: center; /* Alinha verticalmente */
+}
+
+nav ul li:hover .submenu {
+    display: block; /* Exibe o submenu ao passar o mouse */
+}
+
+nav ul li img {
+    margin-right: 8px; /* Espaço entre a imagem e o texto */
+    vertical-align: middle; /* Alinhamento vertical da imagem */
+}
+
+.submenu {
+    display: none; /* Inicialmente oculto */
+    position: absolute; /* Permite que o submenu seja posicionado relativo ao li */
+    top: 100%; /* Alinha o submenu abaixo do item do menu */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Centraliza em relação ao item pai */
+    background-color: #f0f0f0; /* Cor neutra */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.submenu li {
+    margin: 15px 0; /* Aumenta o espaçamento entre as opções */
+}
+
+.submenu li a {
+    color: #333;
+    padding: 8px 15px; /* Aumenta o espaçamento interno */
+    transition: background-color 0.3s, border 0.3s; /* Transição suave */
+    border-radius: 3px; /* Bordas arredondadas */
+    display: block; /* Faz com que a área clicável cubra todo o item */
+}
+
+.submenu li a:hover {
+    background-color: #f78132; /* Laranja Escuro ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento no botão */
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Muda a direção para coluna em telas pequenas */
+        align-items: center; /* Alinha à esquerda */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Aumenta o espaçamento vertical entre os itens */
+    }
+
+    .submenu {
+        left: 0; /* Alinha o submenu à esquerda */
+        transform: none; /* Remove a transformação */
+    }
+}
+
+
+main {
+    margin: 0px;
+    padding: 0px;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.painel-principal {
+    position: relative;
+    width: 100%;
+    padding: 10px;  
+    background: linear-gradient(to bottom, #012141, #031930b4); 
+    
+}
+
+.image-slider {
+    position: relative;
+    width: 90%; /* Ajuste para se adaptar a telas menores */
+    max-width: 1200px; /* Largura máxima */
+    height: 350px; /* Altura ajustada para telas menores */
+    margin: 0 auto; /* Centraliza o painel */
+    overflow: hidden; /* Esconde o excesso das imagens */
+    background-color: #f0f0f0; /* Cor de fundo */
+    border: 7px solid #ffffff; /* Borda */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: transform 0.5s ease, opacity 0.5s ease; 
+    opacity: 0; 
+}
+
+.slide.active {
+    transform: translateX(0); 
+    opacity: 1; 
+}
+
+.slide.next {
+    transform: translateX(100%); 
+    opacity: 0; 
+}
+
+.slide.prev {
+    transform: translateX(-100%); 
+    opacity: 0; 
+}
+
+/* Media Queries para telas menores */
+@media (max-width: 768px) {
+    .image-slider {
+        height: 200px; /* Altura reduzida para telas menores */
+    }
+
+    .slide {
+        transition: transform 0.3s ease, opacity 0.3s ease; /* Transições mais rápidas */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-slider {
+        height: 150px; /* Altura ainda menor para dispositivos pequenos */
+    }
+
+    .slide {
+        transition: transform 0.2s ease, opacity 0.2s ease; /* Transições ainda mais rápidas */
+    }
+} 
+
+.panel-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 25px;
+}
+
+.panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px; /* Largura padrão */
+    height: 110px; /* Altura padrão */
+    background-color: #f1f1f1;
+    margin: 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+/* Efeito de hover */
+.panel:hover {
+    background-color: #f78132;
+    color: white;
+    cursor: pointer;
+}
+
+/* Media Queries para telas menores */
+@media (max-width: 768px) {
+    .panel-container {
+        justify-content: center; /* Centraliza em telas menores */
+    }
+
+    .panel {
+        width: 160px; /* Largura reduzida para telas menores */
+        height: 100px; /* Altura reduzida */
+        margin: 15px; /* Menor espaçamento */
+    }
+}
+
+.about-insurer {
+    padding: 20px;
+    border-radius: 5px; /* Bordas arredondadas */
+    margin: 20px 0; /* Margens superiores e inferiores */
+}
+
+.about-insurer h2 {
+    margin: 10px;
+    font-size: 30px; /* Tamanho do título */
+    color: #01264b; /* Cor do texto do título */
+}
+
+.about-insurer h3 {
+    text-align: center;
+    margin: 30px 0; /* Margens superior e inferior */
+    font-size: 30px; /* Tamanho do subtítulo */
+    color: #333; /* Cor do texto do subtítulo */
+    position: relative; /* Para posicionar as linhas */
+}
+
+.about-insurer h3::before,
+.about-insurer h3::after {
+    content: ""; /* Necessário para criar uma linha */
+    position: absolute;
+    width: 50%; /* Largura da linha */
+    height: 2px; /* Altura da linha */
+    background-color: #ccc; /* Cor da linha */
+}
+
+.about-insurer h3::before {
+    top: -10px; /* Distância acima do texto */
+    left: 25%; /* Centraliza a linha */
+}
+
+.about-insurer h3::after {
+    bottom: -10px; /* Distância abaixo do texto */
+    left: 25%; /* Centraliza a linha */
+}
+
+
+.about-insurer p {
+    margin: 20px; /* Aumenta a margem para mais espaço ao redor do parágrafo */
+    font-size: 20px; /* Tamanho do parágrafo */
+    color: #000000; /* Cor do texto do parágrafo */
+    line-height: 1.6; /* Aumenta o espaçamento entre as linhas */
+    text-align: justify; /* Justifica o texto para uma aparência mais organizada */
+}
+
+
+.benefits-list {
+    margin: 10px;
+    list-style-type: none; /* Remove marcadores da lista */
+    padding: 0; /* Remove padding */
+}
+
+.benefits-list li {
+    margin: 10px;
+    font-size: 16px; /* Tamanho dos itens da lista */
+    margin: 5px 0; /* Margem entre os itens */
+    color: #555; /* Cor dos itens da lista */
+}
+
+.benefits-container {
+    display: flex; /* Usar flexbox para alinhar horizontalmente */
+    flex-wrap: wrap; /* Permite que os itens se movam para a linha de baixo, se necessário */
+    justify-content: center; /* Centraliza os itens na linha */
+    margin-top: 20px; /* Espaçamento superior */
+}
+
+.benefit-box {
+    display: flex; /* Usa flexbox para alinhar ícone e texto */
+    align-items: center; /* Centraliza verticalmente */
+    background-color: #ffffff; /* Fundo branco */
+    border: 1px solid #e0e0e0; /* Borda cinza clara */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 15px; /* Espaçamento interno */
+    margin: 10px; /* Margem para espaçamento entre as caixas */
+    flex: 0 1 calc(50% - 20px); /* Cada caixa ocupa 50% da largura menos a margem */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    box-sizing: border-box; /* Inclui bordas e padding no cálculo de largura */
+}
+
+/* Estilo para telas menores */
+@media (max-width: 768px) {
+    .benefit-box {
+        flex: 0 1 calc(100% - 20px); /* Cada caixa ocupa 100% da largura em telas pequenas */
+    }
+}
+
+.check-icon {
+    margin-right: 10px; /* Espaço entre ícone e texto */
+}
+
+.step-by-step {
+    text-align: center; /* Centraliza o texto */
+}
+
+.steps-container {
+    display: flex; /* Exibe os passos em linha */
+    justify-content: center; /* Centraliza os passos */
+    align-items: center; /* Alinha verticalmente */
+    flex-wrap: wrap; /* Permite quebra de linha se necessário */
+}
+
+.step {
+    margin: 20px; /* Espaçamento entre os passos */
+    text-align: center; /* Centraliza o texto dentro de cada passo */
+    flex: 1 1 150px; /* Permite que cada passo se ajuste */
+    max-width: 200px; /* Largura máxima para cada passo */
+}
+
+.step-number {
+    width: 80px; /* Largura do círculo */
+    height: 80px; /* Altura do círculo */
+    border-radius: 50%; /* Faz o círculo */
+    background-color: #f78132; /* Cor do círculo */
+    color: rgb(255, 255, 255); /* Cor do número */
+    display: flex; /* Para centralizar o número */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: center; /* Alinha horizontalmente */
+    font-size: 25px; /* Tamanho do texto do número */
+    margin: 0 auto 10px; /* Espaçamento abaixo do círculo */
+}
+
+.step h3 {
+    font-size: 22px;
+}
+
+.step p {
+    margin: 5px;
+    font-size: 15px; /* Tamanho do texto do passo */
+    color: #000000; /* Cor do texto do passo */
+    max-width: 200px; /* Define uma largura máxima para o parágrafo */
+    line-height: 1.4; /* Aumenta o espaçamento entre linhas para melhor legibilidade */
+    margin-left: auto; /* Alinha o parágrafo ao centro */
+    margin-right: auto; /* Alinha o parágrafo ao centro */
+}
+
+.info-seguradora {
+    padding: 20px;
+    background-color: #cccbca; /* Cor de fundo para destacar a seção */
+    text-align: center; /* Centraliza o texto */
+}
+
+.info-container {
+    padding: 10px;
+    display: flex; /* Exibe as informações em linha */
+    flex-wrap: wrap; /* Permite quebra de linha se necessário */
+    justify-content: center; /* Centraliza os itens */
+}
+
+.info-item {
+    display: flex; /* Exibe o ícone e o texto em linha */
+    align-items: center; /* Alinha verticalmente */
+    margin: 10px; /* Espaçamento entre os itens */
+    font-size: 16px; /* Tamanho do texto */
+}
+
+.info-icon {
+    margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .steps-container {
+        flex-direction: column; /* Alinha os passos verticalmente */
+    }
+
+    .step {
+        margin: 10px 0; /* Reduz o espaçamento vertical entre os passos */
+    }
+
+    .step-number {
+        width: 60px; /* Ajusta a largura do círculo */
+        height: 60px; /* Ajusta a altura do círculo */
+        font-size: 20px; /* Ajusta o tamanho do texto do número */
+    }
+
+    .info-item {
+        flex: 1 1 100%; /* Faz com que cada item ocupe toda a largura disponível */
+        justify-content: center; /* Centraliza o conteúdo no item */
+    }
+}
+
+footer {
+    color: rgb(0, 0, 0);
+    background-color: #cccbca;
+    padding: 10px; /* Aumenta o padding para melhor espaçamento */
+    text-align: center;
+    position: relative;
+    width: 100%; /* Largura total */
+}
+
+.social-media {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os botões se ajustem e quebrem para a próxima linha se necessário */
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.social-button-whatsapp,
+.social-button-instagram,
+.social-button-linkedin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px; /* Largura do botão */
+    height: 40px; /* Altura do botão */
+    margin: 10px; /* Espaçamento menor entre os botões */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s;
+}
+
+.social-media img {
+    width: 40px; /* Largura do ícone */
+    height: 40px; /* Altura do ícone */
+    margin-right: 10px; /* Espaçamento entre ícone e texto */
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 16px; /* Ajuste para que fique acima do footer */
+    right: 20px;
+    background-color: #25D366;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    animation: pulse 1s infinite;
+    z-index: 10;
+}
+
+.whatsapp-button img {
+    width: 30px;
+}
+
+.back-to-top {
+    position: absolute; /* Fixa o botão na tela */
+    left: 20px; /* Distância da esquerda */
+    bottom: 20px; /* Distância do fundo para não sobrepor o footer */
+    background-color: transparent; /* Fundo transparente */
+    border: none; /* Sem borda */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    z-index: 1000; /* Fixa acima de outros elementos */
+    animation: pulse 2s infinite; /* Adiciona a animação de pulsação */
+}
+
+.back-to-top img {
+    width: 40px; /* Largura do ícone */
+    height: 40px; /* Altura do ícone */
+    transition: transform 0.3s; /* Efeito de transição */
+}
+
+.back-to-top:hover img {
+    transform: scale(1.1); /* Aumenta o ícone ao passar o mouse */
+}
+
+/* Animação de pulsação */
+@keyframes pulse {
+    0% {
+        transform: scale(1); /* Começa no tamanho normal */
+    }
+    50% {
+        transform: scale(1.1); /* Aumenta para 110% no meio da animação */
+    }
+    100% {
+        transform: scale(1); /* Retorna ao tamanho normal */
+    }
+}
