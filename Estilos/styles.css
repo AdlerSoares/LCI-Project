@@ -205,7 +205,7 @@ main {
 .painel-principal {
     position: relative;
     width: 100%;
-    padding: 10px;  
+    padding: 3px;  
     background: linear-gradient(to bottom, #012141, #031930b4); 
     
 }
@@ -214,7 +214,7 @@ main {
     position: relative;
     width: 100%; /* Ajuste para se adaptar a telas menores */
     max-width: 1200px; /* Largura máxima */
-    height: 350px; /* Altura ajustada para telas menores */
+    height: 400px; /* Altura ajustada para telas menores */
     margin: 0 auto; /* Centraliza o painel */
     overflow: hidden; /* Esconde o excesso das imagens */
     background-color: #f0f0f0; /* Cor de fundo */
