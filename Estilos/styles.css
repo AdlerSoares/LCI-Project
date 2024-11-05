@@ -440,12 +440,6 @@ main {
     margin-right: auto; /* Alinha o parágrafo ao centro */
 }
 
-.info-seguradora {
-    padding: 20px;
-    background-color: #cccbca; /* Cor de fundo para destacar a seção */
-    text-align: center; /* Centraliza o texto */
-}
-
 .info-container {
     padding: 10px;
     display: flex; /* Exibe as informações em linha */
@@ -487,11 +481,16 @@ main {
 
 footer {
     color: rgb(0, 0, 0);
-    background-color: #cccbca;
+    background-color: #01264b83;
     padding: 10px; /* Aumenta o padding para melhor espaçamento */
     text-align: center;
     position: relative;
     width: 100%; /* Largura total */
+}
+
+footer .info-seguradora {
+    padding: 20px;
+    text-align: center; /* Centraliza o texto */
 }
 
 .social-media {
