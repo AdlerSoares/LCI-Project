@@ -318,8 +318,9 @@ main {
 }
 
 .about-insurer h2 {
+    text-align: center;
     margin: 10px;
-    font-size: 30px; /* Tamanho do título */
+    font-size: 45px; /* Tamanho do título */
     color: #01264b; /* Cor do texto do título */
 }
 
@@ -353,7 +354,7 @@ main {
 
 .about-insurer p {
     margin: 20px; /* Aumenta a margem para mais espaço ao redor do parágrafo */
-    font-size: 20px; /* Tamanho do parágrafo */
+    font-size: 18px; /* Tamanho do parágrafo */
     color: #000000; /* Cor do texto do parágrafo */
     line-height: 1.6; /* Aumenta o espaçamento entre as linhas */
     text-align: justify; /* Justifica o texto para uma aparência mais organizada */
@@ -492,7 +493,6 @@ main {
 
     .info-item {
         flex: 1 1 100%; /* Faz com que cada item ocupe toda a largura disponível */
-        justify-content: center; /* Centraliza o conteúdo no item */
     }
 }
 
