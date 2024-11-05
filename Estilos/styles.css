@@ -249,9 +249,10 @@ main {
 }
 
 /* Media Queries para telas menores */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .image-slider {
         height: 200px; /* Altura reduzida para telas menores */
+        display: none;
     }
 
     .slide {
