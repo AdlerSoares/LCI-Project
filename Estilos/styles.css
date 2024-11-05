@@ -370,7 +370,7 @@ main {
     margin: 10px;
     font-size: 16px; /* Tamanho dos itens da lista */
     margin: 5px 0; /* Margem entre os itens */
-    color: #555; /* Cor dos itens da lista */
+    color: #fffcfc; /* Cor dos itens da lista */
 }
 
 .benefits-container {
@@ -383,13 +383,14 @@ main {
 .benefit-box {
     display: flex; /* Usa flexbox para alinhar ícone e texto */
     align-items: center; /* Centraliza verticalmente */
-    background-color: #ffffff; /* Fundo branco */
+    background-color: #01274dda; /* Fundo branco */
+    color: white;
     border: 1px solid #e0e0e0; /* Borda cinza clara */
     border-radius: 5px; /* Bordas arredondadas */
     padding: 15px; /* Espaçamento interno */
     margin: 10px; /* Margem para espaçamento entre as caixas */
     flex: 0 1 calc(50% - 20px); /* Cada caixa ocupa 50% da largura menos a margem */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.253); /* Sombra leve */
     box-sizing: border-box; /* Inclui bordas e padding no cálculo de largura */
 }
 
