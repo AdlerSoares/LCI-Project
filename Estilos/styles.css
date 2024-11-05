@@ -212,7 +212,7 @@ main {
 
 .image-slider {
     position: relative;
-    width: 90%; /* Ajuste para se adaptar a telas menores */
+    width: 100%; /* Ajuste para se adaptar a telas menores */
     max-width: 1200px; /* Largura máxima */
     height: 350px; /* Altura ajustada para telas menores */
     margin: 0 auto; /* Centraliza o painel */
@@ -259,16 +259,6 @@ main {
         transition: transform 0.3s ease, opacity 0.3s ease; /* Transições mais rápidas */
     }
 }
-
-@media (max-width: 480px) {
-    .image-slider {
-        height: 150px; /* Altura ainda menor para dispositivos pequenos */
-    }
-
-    .slide {
-        transition: transform 0.2s ease, opacity 0.2s ease; /* Transições ainda mais rápidas */
-    }
-} 
 
 .panel-container {
     display: flex;
@@ -320,7 +310,7 @@ main {
 .about-insurer h2 {
     text-align: center;
     margin: 10px;
-    font-size: 45px; /* Tamanho do título */
+    font-size: 40px; /* Tamanho do título */
     color: #01264b; /* Cor do texto do título */
 }
 
@@ -354,10 +344,9 @@ main {
 
 .about-insurer p {
     margin: 20px; /* Aumenta a margem para mais espaço ao redor do parágrafo */
-    font-size: 18px; /* Tamanho do parágrafo */
+    font-size: 17px; /* Tamanho do parágrafo */
     color: #000000; /* Cor do texto do parágrafo */
     line-height: 1.6; /* Aumenta o espaçamento entre as linhas */
-    text-align: justify; /* Justifica o texto para uma aparência mais organizada */
 }
 
 
