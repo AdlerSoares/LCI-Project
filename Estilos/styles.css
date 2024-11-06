@@ -75,7 +75,10 @@ nav ul li a {
     align-items: center;
     transition: color 0.3s ease, transform 0.3s ease; /* Transição para a cor e transformação */
 }
-
+nav ul li img{
+    margin-right:  3px;
+    margin-bottom: 4px;
+}
 /* Efeito no hover dos links */
 nav ul li a:hover {
     color: #ffffff; /* Altera a cor do texto quando o mouse está sobre o link */
@@ -227,7 +230,7 @@ header:hover {
 }
 
 .phone-icon {
-    margin-right: 5px;
+    margin-top: 2px;
 }
 
 @media (max-width: 900px) {
