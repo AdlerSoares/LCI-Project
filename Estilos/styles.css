@@ -172,6 +172,11 @@ header:hover {
 .logo {
     max-width: 250px; /* Ajuste conforme o tamanho da sua logo */
     width: 100%; /* Garante que a logo não exceda a largura do contêiner */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transição suave para aumentar o tamanho e alterar a opacidade */
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Aumenta o tamanho da logo em 10% */
 }
 
 /* Media Query para telas menores */
