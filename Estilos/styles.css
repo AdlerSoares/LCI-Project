@@ -565,7 +565,7 @@ main {
     flex: 0 1 calc(50% - 20px); /* Cada caixa ocupa 50% da largura menos a margem */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.253); /* Sombra leve */
     box-sizing: border-box; /* Inclui bordas e padding no cálculo de largura */
-    background: linear-gradient(135deg, #01274dd0, #01274df1); /* Gradiente mais forte no fundo */
+    background: linear-gradient(to right, #01274dea, #01274ddc); /* Gradiente mais forte no fundo */
 }
 
 /* Estilo para telas menores */
