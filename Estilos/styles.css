@@ -10,47 +10,155 @@ body {
     background-color: white;
     color: #333;
 }
-
+/* Estilos para a Header */
+/* Estilos para a Header */
 header {
-    background-color: #ff7d31;
-    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%); /* Começa fora da tela */
+    width: 90%; /* Definindo largura para que a header não ocupe toda a largura */
+    max-width: 1200px; /* Limita a largura máxima */
+    background-color: #fc9457;
+    color: white;
+    padding: 15px 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    opacity: 0; /* Inicialmente invisível */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Transição suave */
+    margin: 0 10px; /* Distância das margens do site */
 }
 
-.contact-info {
+/* Animação de "caindo do topo" ao carregar */
+header.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0); /* Fica visível e em sua posição correta */
+}
+
+/* Estilos para o conteúdo do menu */
+nav {
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Estilos para os itens do menu */
+nav ul li {
+    margin: 0 20px;
     display: flex;
     align-items: center;
-    position: absolute;
-    right: 20px;
-    top: 10px;
+    position: relative;
+    transition: transform 0.3s ease, color 0.3s ease; /* Animação suave ao passar o mouse */
+}
+
+/* Efeito de animação ao passar o mouse sobre o item de menu */
+nav ul li:hover {
+    transform: scale(1.1); /* Aumenta o tamanho ligeiramente */
+    color: #333; /* Altera a cor do texto */
+}
+
+/* Estilo dos links no menu */
+nav ul li a {
     color: white;
-    flex-wrap: wrap; /* Permite que os itens se ajustem em várias linhas se necessário */
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transição para a cor e transformação */
 }
 
-.phone-number {
-    margin-left: 5px; /* Espaço entre o ícone e o número */
-    white-space: nowrap; /* Impede que o número quebre em várias linhas */
-    font-size: 14px; /* Tamanho de fonte base */
-    line-height: 1.5; /* Espaçamento vertical */
-    overflow: hidden; /* Impede o overflow se o número for muito longo */
-    text-overflow: ellipsis; /* Adiciona '...' se o texto for muito longo */
+/* Efeito no hover dos links */
+nav ul li a:hover {
+    color: #ffffff; /* Altera a cor do texto quando o mouse está sobre o link */
+    transform: translateX(5px); /* Move ligeiramente o link para a direita */
 }
 
-/* Media Query para telas menores */
-@media (max-width: 900px) {
-    .phone-number {
-        font-size: 0px; /* Tamanho de fonte menor em telas pequenas */
-        max-width: 0px; /* Limita a largura em telas pequenas */
-         /* Permite que o número quebre em várias linhas se necessário */
+/* Exibe o submenu ao passar o mouse */
+nav ul li:hover .submenu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0); /* Faz o submenu aparecer com um efeito suave */
+}
+
+/* Estilo do submenu */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px); /* Inicialmente abaixo e com animação suave */
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transição suave */
+}
+
+.submenu li {
+    margin: 15px 0;
+}
+
+.submenu li a {
+    color: #333;
+    padding: 8px 15px;
+    transition: background-color 0.3s, border 0.3s;
+    border-radius: 3px;
+    display: block;
+}
+
+/* Estilo para o hover dentro do submenu */
+.submenu li a:hover {
+    background: linear-gradient(to bottom, #fc9357ec, #f88949);
+    color: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Levanta o item ao passar o mouse */
+}
+
+/* Responsividade para telas menores (menor que 768px) */
+@media (max-width: 768px) {
+    header {
+        width: 100%; /* Ocupa 100% da largura em telas pequenas */
+        margin: 0; /* Remove a margem lateral */
+        padding-top: 15px; /* Ajuste do padding-top */
+        padding-bottom: 15px; /* Ajuste do padding-bottom */
     }
-    .phone-icon {
 
-        width: 0px; 
-        height: 0px;
+    nav ul {
+        flex-direction: column; /* Alinha os itens verticalmente */
+        align-items: center; /* Alinha os itens ao centro */
+        width: 100%; /* Garante que a lista ocupe toda a largura da tela */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Espaço maior entre os itens no menu */
+    }
+
+    /* Estilos para o submenu em telas pequenas */
+    .submenu {
+        left: 0; /* Alinha o submenu à esquerda */
+        transform: none; /* Remove a transformação de alinhamento central */
+    }
+
+    .contact-info {
+        position: absolute;
+        right: 10px;
+        top: 5px;
     }
 }
 
-.phone-icon {
-    margin-right: 5px; /* Espaço entre o ícone e o texto */
+/* Efeito de hover na header */
+header:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 .header-content {
@@ -62,30 +170,115 @@ header {
 }
 
 .logo {
-    max-width: 200px; /* Ajuste conforme o tamanho da sua logo */
+    max-width: 250px; /* Ajuste conforme o tamanho da sua logo */
     width: 100%; /* Garante que a logo não exceda a largura do contêiner */
 }
 
 /* Media Query para telas menores */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .header-content {
         flex-direction: column; /* Muda para coluna em telas menores */
-        padding: 20px 5%; /* Ajusta o padding para telas menores */
+        padding: 50px; /* Ajusta o padding para telas menores */
+        padding-top: 120px;
         align-items: center; /* Centraliza os itens */
     }
 
     .logo {
-        max-width: 200px; /* Pode ajustar o tamanho da logo em telas pequenas */
+        max-width: 250px; /* Pode ajustar o tamanho da logo em telas pequenas */
+    }
+}
+
+/* Estilo do contato (telefone) */
+.contact-info {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    color: white;
+    flex-wrap: wrap;
+}
+
+.phone-number {
+    margin-left: 5px;
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: white; /* Cor do número de telefone */
+    transition: transform 0.3s ease, color 0.3s ease; /* Suaviza a transformação e a cor */
+}
+
+/* Retira o sublinhado do link */
+.contact-info a {
+    text-decoration: none; /* Remove o sublinhado do link */
+}
+
+/* Efeito de destaque ao passar o mouse */
+.phone-number:hover {
+    transform: translateY(-3px); /* Move ligeiramente para cima */
+    color: #000000; /* Cor de destaque (laranja) */
+}
+
+.phone-icon {
+    margin-right: 5px;
+}
+
+@media (max-width: 900px) {
+    .phone-number {
+        font-size: 0px;
+        max-width: 0px;
+    }
+    .phone-icon {
+        width: 0px;
+        height: 0px;
     }
 }
 .welcome-message {
-    font-size: 28px;
+    font-size: 36px; /* Tamanho maior para dar mais presença */
+    font-family: 'Arial', sans-serif; /* Fonte simples e sem necessidade de link externo */
     color: #01264b; /* Azul Marinho */
-    margin: 0; /* Remove margens padrão */
+    text-align: center; /* Centraliza a mensagem */
+    margin-top: 30px;
+    font-weight: 600; /* Deixa a fonte mais forte */
+    letter-spacing: 1px; /* Aumenta o espaçamento entre as letras */
+    text-transform: uppercase; /* Transforma o texto para maiúsculas */
+    line-height: 1.4; /* Aumenta o espaçamento entre as linhas */
+    position: relative; /* Para a animação do texto */
+    padding: 10px 0; /* Espaçamento interno */
+    transition: all 0.3s ease; /* Transição suave */
+}
+
+.welcome-message::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, #f78132, #f1b25b); /* Gradiente de fundo */
+    border-radius: 3px;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    animation: slideIn 10s ease-in-out infinite; /* Tempo de animação reduzido para 1 segundo */
+}
+
+@keyframes slideIn {
+    0% {
+        transform: scaleX(0);
+    }
+    50% {
+        transform: scaleX(1); /* Linha completamente visível */
+    }
+    100% {
+        transform: scaleX(0); /* Linha desaparecendo novamente */
+    }
 }
 
 .button-container {
-    margin-top: 20px; /* Espaço acima dos botões */
+    text-align: center;
+    margin-top: 30px; /* Espaço acima dos botões */
 }
 
 .button {
@@ -100,93 +293,11 @@ header {
 }
 
 .button:hover {
-    background-color: #f78132; /* Laranja Escuro ao passar o mouse */
-    transform: scale(1.05); /* Leve aumento no botão */
+    background: linear-gradient(to bottom, #fc9357ec, #f88949); /* Gradiente de fundo no hover */
+    color: white; /* Cor do texto no hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+    transform: translateY(-5px); /* Levanta a caixa ao passar o mouse */
 }
-
-nav {
-    text-align: center; /* Centraliza o conteúdo */
-}
-
-nav ul {
-    list-style: none; /* Remove as marcas da lista */
-    padding: 0; /* Remove o padding padrão */
-    margin: 0; /* Remove a margem padrão */
-    display: flex; /* Usa flexbox para alinhar itens em linha */
-    justify-content: center; /* Centraliza os itens horizontalmente */
-    flex-wrap: wrap; /* Permite quebra de linha se necessário */
-}
-
-nav ul li {
-    margin: 0 20px; /* Espaçamento entre os itens */
-    display: flex; /* Usa flexbox para alinhar texto e imagem */
-    align-items: center; /* Alinha verticalmente o texto com a imagem */
-    position: relative; /* Necessário para o posicionamento do submenu */
-}
-
-nav ul li a {
-    color: white; /* Cor do texto */
-    text-decoration: none; /* Remove o sublinhado */
-    font-weight: bold; /* Negrito */
-    display: flex; /* Usa flexbox para o alinhamento interno */
-    align-items: center; /* Alinha verticalmente */
-}
-
-nav ul li:hover .submenu {
-    display: block; /* Exibe o submenu ao passar o mouse */
-}
-
-nav ul li img {
-    margin-right: 8px; /* Espaço entre a imagem e o texto */
-    vertical-align: middle; /* Alinhamento vertical da imagem */
-}
-
-.submenu {
-    display: none; /* Inicialmente oculto */
-    position: absolute; /* Permite que o submenu seja posicionado relativo ao li */
-    top: 100%; /* Alinha o submenu abaixo do item do menu */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translateX(-50%); /* Centraliza em relação ao item pai */
-    background-color: #f0f0f0; /* Cor neutra */
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.submenu li {
-    margin: 15px 0; /* Aumenta o espaçamento entre as opções */
-}
-
-.submenu li a {
-    color: #333;
-    padding: 8px 15px; /* Aumenta o espaçamento interno */
-    transition: background-color 0.3s, border 0.3s; /* Transição suave */
-    border-radius: 3px; /* Bordas arredondadas */
-    display: block; /* Faz com que a área clicável cubra todo o item */
-}
-
-.submenu li a:hover {
-    background-color: #f78132; /* Laranja Escuro ao passar o mouse */
-    transform: scale(1.05); /* Leve aumento no botão */
-}
-
-/* Estilos Responsivos */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column; /* Muda a direção para coluna em telas pequenas */
-        align-items: center; /* Alinha à esquerda */
-    }
-
-    nav ul li {
-        margin: 10px 0; /* Aumenta o espaçamento vertical entre os itens */
-    }
-
-    .submenu {
-        left: 0; /* Alinha o submenu à esquerda */
-        transform: none; /* Remove a transformação */
-    }
-}
-
 
 main {
     margin: 0px;
@@ -271,33 +382,80 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 200px; /* Largura padrão */
-    height: 110px; /* Altura padrão */
-    background-color: #f1f1f1;
+    flex-direction: column; /* Alinha o ícone em cima do texto em todas as telas */
+    width: 300px; /* Largura padrão */
+    height: 120px; /* Altura padrão */
+    background: linear-gradient(to bottom, #e0e0e0, #bebebe); /* Gradiente mais escuro */
     margin: 25px;
-    border-radius: 5px;
+    border-radius: 10px; /* Borda arredondada para as caixas */
     font-weight: bold;
-    color: #333;
-    transition: background-color 0.3s;
+    color: #000000;
+    transition: all 0.3s ease-in-out; /* Transição suave para efeitos */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.panel-icon {
+    margin-bottom: 15px; /* Aumenta o espaçamento entre o ícone e o texto */
+    transition: transform 0.3s ease; /* Transição suave no efeito de hover */
+}
+
+.panel-text {
+    font-size: 18px; /* Aumenta o tamanho da fonte */
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Adiciona um pequeno destaque ao texto */
 }
 
 /* Efeito de hover */
 .panel:hover {
-    background-color: #f78132;
-    color: white;
-    cursor: pointer;
+    background: linear-gradient(to bottom, #fc9357ec, #f88949); /* Gradiente de fundo no hover */
+    color: white; /* Cor do texto no hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+    transform: translateY(-5px); /* Levanta a caixa ao passar o mouse */
 }
 
-/* Media Queries para telas menores */
+.panel:hover .panel-icon {
+    transform: scale(1.2); /* Aumenta o tamanho do ícone no hover */
+}
+
+/* Responsividade */
+
+/* Em telas menores que 768px (tablets e celulares) */
 @media (max-width: 768px) {
     .panel-container {
-        justify-content: center; /* Centraliza em telas menores */
+        margin: 10px;
     }
 
     .panel {
-        width: 160px; /* Largura reduzida para telas menores */
-        height: 100px; /* Altura reduzida */
-        margin: 15px; /* Menor espaçamento */
+        width: 250px; /* Diminui a largura nas telas menores */
+        height: 120px; /* Mantém a altura */
+        margin: 15px;
+    }
+
+    .panel-icon {
+        margin-bottom: 15px; /* Mantém o espaçamento entre o ícone e o texto */
+    }
+
+    .panel-text {
+        font-size: 16px; /* Ajusta o tamanho da fonte para telas menores */
+    }
+}
+
+/* Em telas menores que 480px (celulares maiores e pequenos) */
+@media (max-width: 480px) {
+    .panel {
+        width: 200px; /* Diminui ainda mais a largura nas telas menores */
+        height: 100px; /* Ajusta a altura */
+        margin: 10px;
+    }
+
+    .panel-icon {
+        margin-bottom: 8px; /* Reduz o espaçamento entre o ícone e o texto em telas pequenas */
+    }
+
+    .panel-text {
+        font-size: 14px; /* Tamanho de fonte menor em telas muito pequenas */
     }
 }
 
@@ -316,7 +474,7 @@ main {
 
 .about-insurer h3 {
     text-align: center;
-    margin: 30px 0; /* Margens superior e inferior */
+    margin: 50px 20px 30px; /* Margens superior e inferior */
     font-size: 30px; /* Tamanho do subtítulo */
     color: #333; /* Cor do texto do subtítulo */
     position: relative; /* Para posicionar as linhas */
@@ -328,7 +486,7 @@ main {
     position: absolute;
     width: 50%; /* Largura da linha */
     height: 2px; /* Altura da linha */
-    background-color: #ccc; /* Cor da linha */
+    background-color: #01264b83; /* Cor da linha */
 }
 
 .about-insurer h3::before {
@@ -354,15 +512,32 @@ main {
     margin: 10px;
     list-style-type: none; /* Remove marcadores da lista */
     padding: 0; /* Remove padding */
+    background: linear-gradient(135deg, #f1f1f1, #d1d1d1); /* Gradiente mais forte para a lista */
+    border-radius: 8px; /* Bordas arredondadas para a lista */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra mais forte para dar destaque */
+    padding: 20px; /* Adiciona um pouco de padding ao redor da lista */
 }
 
+/* Estilo para os itens da lista */
 .benefits-list li {
     margin: 10px;
     font-size: 16px; /* Tamanho dos itens da lista */
-    margin: 5px 0; /* Margem entre os itens */
-    color: #fffcfc; /* Cor dos itens da lista */
+    color: #333; /* Cor dos itens da lista */
+    padding-left: 30px; /* Adiciona espaço à esquerda para o ícone */
+    position: relative; /* Para posicionar o ícone */
 }
 
+/* Estilo para o ícone de verificação */
+.benefits-list li .check-icon {
+    position: absolute; /* Posiciona o ícone na esquerda do texto */
+    left: 10px; /* Espaço à esquerda */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Ajusta o alinhamento vertical */
+    font-size: 20px; /* Aumenta o tamanho do ícone */
+    color: #00aaff; /* Cor azul para destacar o ícone */
+}
+
+/* Caixas de Benefícios */
 .benefits-container {
     display: flex; /* Usar flexbox para alinhar horizontalmente */
     flex-wrap: wrap; /* Permite que os itens se movam para a linha de baixo, se necessário */
@@ -373,7 +548,7 @@ main {
 .benefit-box {
     display: flex; /* Usa flexbox para alinhar ícone e texto */
     align-items: center; /* Centraliza verticalmente */
-    background-color: #01274dda; /* Fundo branco */
+    background-color: #01274dda; /* Fundo das caixas */
     color: white;
     border: 1px solid #e0e0e0; /* Borda cinza clara */
     border-radius: 5px; /* Bordas arredondadas */
@@ -382,6 +557,7 @@ main {
     flex: 0 1 calc(50% - 20px); /* Cada caixa ocupa 50% da largura menos a margem */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.253); /* Sombra leve */
     box-sizing: border-box; /* Inclui bordas e padding no cálculo de largura */
+    background: linear-gradient(135deg, #01274dd0, #01274df1); /* Gradiente mais forte no fundo */
 }
 
 /* Estilo para telas menores */
@@ -413,23 +589,44 @@ main {
     max-width: 200px; /* Largura máxima para cada passo */
 }
 
+/* Estilo da bolinha do número */
 .step-number {
     width: 80px; /* Largura do círculo */
     height: 80px; /* Altura do círculo */
     border-radius: 50%; /* Faz o círculo */
-    background-color: #f78132; /* Cor do círculo */
+    background-color: #fc9457; /* Cor do círculo */
     color: rgb(255, 255, 255); /* Cor do número */
     display: flex; /* Para centralizar o número */
     align-items: center; /* Alinha verticalmente */
     justify-content: center; /* Alinha horizontalmente */
     font-size: 25px; /* Tamanho do texto do número */
-    margin: 0 auto 10px; /* Espaçamento abaixo do círculo */
+    margin: 0 auto -22px; /* Espaçamento abaixo do círculo */
+    animation: pulse-ball 2s infinite ease-in-out; /* Efeito de pulsação suave */
 }
 
+/* Texto do título de cada passo */
 .step h3 {
     font-size: 22px;
+    margin: 30px -6px 30px;
+    position: relative; /* Necessário para posicionar a linha abaixo do título */
 }
 
+/* Linha abaixo do título */
+.step h3::after {
+    content: ""; /* Necessário para criar uma linha */
+    position: absolute;
+    width: 50%; /* Largura da linha */
+    height: 2px; /* Altura da linha */
+    background-color: #01264b83; /* Cor da linha */
+    bottom: -10px; /* Posiciona a linha um pouco abaixo do título */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza a linha */
+}
+.step h3::before{
+    display: none;
+}
+
+/* Estilo do parágrafo do passo */
 .step p {
     margin: 5px;
     font-size: 15px; /* Tamanho do texto do passo */
@@ -479,6 +676,22 @@ main {
     }
 }
 
+/* Efeito de pulsação leve para a bolinha */
+@keyframes pulse-ball {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05); /* Aumenta a bolinha em 5% */
+        opacity: 1.1; /* Leve aumento na opacidade */
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 footer {
     color: rgb(0, 0, 0);
     background-color: #01264b83;
@@ -501,8 +714,7 @@ footer .info-seguradora {
 }
 
 .social-button-whatsapp,
-.social-button-instagram,
-.social-button-linkedin {
+.social-button-instagram{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -523,9 +735,9 @@ footer .info-seguradora {
 
 .whatsapp-button {
     position: fixed;
-    bottom: 16px; /* Ajuste para que fique acima do footer */
+    bottom: 80px; /* Ajuste para que o botão do WhatsApp fique acima do botão de telefone */
     right: 20px;
-    background-color: #25D366;
+    background-color: #25D366; /* Cor verde do WhatsApp */
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -534,12 +746,65 @@ footer .info-seguradora {
     align-items: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     animation: pulse 1s infinite;
-    z-index: 10;
+    z-index: 10; /* Garante que o botão do WhatsApp fique acima do telefone */
 }
 
 .whatsapp-button img {
     width: 30px;
 }
+
+.phone-button-side {
+    position: fixed;
+    bottom: 16px; /* Fica abaixo do botão do WhatsApp */
+    right: 20px;
+    background-color: #01264b; /* Cor azul do botão de telefone */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    animation: pulse 1s infinite;
+    z-index: 9; /* Fica atrás do botão do WhatsApp */
+}
+
+.phone-button-side img {
+    width: 30px;
+}
+
+/* Animação de pulsação */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animação para a pulsação */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 
 .back-to-top {
     position: absolute; /* Fixa o botão na tela */
