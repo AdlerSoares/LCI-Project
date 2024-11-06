@@ -31,3 +31,27 @@ document.getElementById('back-to-top').addEventListener('click', function(event)
         behavior: 'smooth' // Rolagem suave
     });
 });
+
+// Variável que seleciona a header
+const header = document.querySelector('header');
+
+// Função para verificar a posição do scroll
+function checkScroll() {
+    if (window.scrollY > 50) {
+        // Se o scroll for maior que 50px, a header desaparece
+        header.classList.remove('show');
+    } else {
+        // Caso contrário, a header aparece
+        header.classList.add('show');
+    }
+}
+
+// Chama a função assim que a página carrega para mostrar a header caindo
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        header.classList.add('show'); // Animação de "cair" da header
+    }, 200); // Leve atraso para que o efeito de entrada seja notado
+});
+
+// A cada rolagem, verifica a posição do scroll
+window.addEventListener('scroll', checkScroll);
