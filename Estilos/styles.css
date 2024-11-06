@@ -653,6 +653,7 @@ main {
 }
 
 .info-item {
+    flex-direction: auto;
     display: flex; /* Exibe o ícone e o texto em linha */
     align-items: center; /* Alinha verticalmente */
     margin: 10px; /* Espaçamento entre os itens */
