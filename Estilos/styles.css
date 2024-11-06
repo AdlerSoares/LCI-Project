@@ -383,7 +383,7 @@ main {
     align-items: center;
     justify-content: center;
     flex-direction: column; /* Alinha o ícone em cima do texto em todas as telas */
-    width: 300px; /* Largura padrão */
+    width: 350px; /* Largura padrão */
     height: 120px; /* Altura padrão */
     background: linear-gradient(to bottom, #e0e0e0, #bebebe); /* Gradiente mais escuro */
     margin: 25px;
@@ -445,7 +445,7 @@ main {
 /* Em telas menores que 480px (celulares maiores e pequenos) */
 @media (max-width: 480px) {
     .panel {
-        width: 200px; /* Diminui ainda mais a largura nas telas menores */
+        width: 250px; /* Diminui ainda mais a largura nas telas menores */
         height: 100px; /* Ajusta a altura */
         margin: 10px;
     }
