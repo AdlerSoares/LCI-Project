@@ -9,7 +9,7 @@
     
 </head>
 <body>
-    <header>
+    <header id="top">
         <nav>
             <ul>
                 <li>
@@ -46,7 +46,7 @@
     <div>
         <h2 class="welcome-message">Bem-vindo a LCI Seguros</h2>
         <div class="button-container">
-            <a href="servicos.html" class="button">Seguros e Produtos</a>
+            <a href="#serviços-produtos" class="button" id="serviços-button">Serviços e Produtos</a>
             <a href="contatos.html" class="button">Atendimento</a>
         </div>
     </div>
@@ -60,7 +60,7 @@
             <img src="./Imagens/vidas.png" class="slide" alt="Imagem 3">
         </div>    
     </section>
-    <section class="about-insurer">
+    <section class="about-insurer" id="serviços-produtos">
         <h2>LCI Seguros</h2>
         <p>O nosso propósito é proporcionar tranquilidade e segurança aos nossos clientes, prestando um atendimento consultivo e exclusivo. Por isso capacitamos nossos profissionais para que sejam especialistas, atuando sempre de forma independente e transparente.
         Temos parcerias com as maiores seguradoras e instituições financeiras do brasil e do mundo, garantindo aos clientes a oportunidade de acesso aos melhores serviços e seguros do mercado.</p>
@@ -159,26 +159,41 @@
 </aside>
 
 <footer>
-    <section class="info-seguradora">
-        <div class="info-container">
-            <div class="info-item">
-                <img src="https://img.icons8.com/material-outlined/24/000000/place-marker.png" alt="Local" class="info-icon">
-                <span>Rua Nylton Moreira Veloso, 77, Bairro Camargos - Belo Horizonte/MG - 30.525-480</span>
-            </div>
-            <div class="info-item">
-                <img src="https://img.icons8.com/material-outlined/24/000000/phone.png" alt="Telefone" class="info-icon">
-                <span>(31) 98977-0001</span>
-            </div>
-            <div class="info-item">
-                <img src="https://img.icons8.com/material-outlined/24/000000/mail.png" alt="Email" class="info-icon">
-                <span>atendimento@lciseguros.com.br</span>
-            </div>
-            <div class="info-item">
-                <img src="https://img.icons8.com/material-outlined/24/000000/time.png" alt="Horário de Atendimento" class="info-icon">
-                <span>Seg - Sex: 9h - 18h</span>
-            </div>
+    <!-- Container principal do footer -->
+    <div class="footer-content">
+        <!-- Logo da empresa à esquerda -->
+        <div class="footer-logo">
+            <a href="#top" id="footer-logo-link">
+                <img src="./Imagens/logo2.png" alt="Logo LCI Seguros">
+            </a>
         </div>
-    </section>
+        <!-- Linha separadora -->
+        <div class="separator"></div>
+
+        <!-- Informações da seguradora -->
+        <section class="info-seguradora">
+            <div class="info-container">
+                <div class="info-item">
+                    <img src="https://img.icons8.com/material-outlined/24/ffffff/place-marker.png" alt="Local" class="info-icon">
+                    <span>Rua Nylton Moreira Veloso, 77, Bairro Camargos - Belo Horizonte/MG - 30525-480</span>
+                </div>
+                <div class="info-item">
+                    <img src="https://img.icons8.com/material-outlined/24/ffffff/mail.png" alt="Email" class="info-icon">
+                    <span>atendimento@lciseguros.com.br</span>
+                </div>
+                <div class="info-item">
+                    <img src="https://img.icons8.com/material-outlined/24/ffffff/phone.png" alt="Telefone" class="info-icon">
+                    <span>(31) 98977-0001</span>
+                </div>
+                <div class="info-item">
+                    <img src="https://img.icons8.com/material-outlined/24/ffffff/time.png" alt="Horário de Atendimento" class="info-icon">
+                    <span>Seg - Sex: 9h - 18h</span>
+                </div>
+            </div>
+        </section>        
+    </div>
+
+    <!-- Social media section -->
     <div class="social-media">
         <a href="https://wa.me/31989770001" class="social-button whatsapp" target="_blank">
             <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp">
@@ -187,12 +202,11 @@
             <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram">
         </a>
     </div>
+
+    <!-- Copyright and back-to-top button -->
     <div>
-        <p>&copy; LCI SEGUROS. Todos os direitos reservados.</p>
+        <p>&copy; Copyright 2024 LC Seguros - Todos os direitos reservados.</p>
     </div>
-    <a href="#top" class="back-to-top" id="back-to-top">
-        <img src="https://img.icons8.com/ios-filled/50/000000/chevron-up.png" alt="Voltar ao Topo">
-    </a>
 </footer>
 
 <script src="./JavaScript/script.js"></script>

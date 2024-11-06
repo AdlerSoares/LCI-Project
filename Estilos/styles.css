@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 1auto;
     font-family: Arial, sans-serif;
@@ -168,7 +172,7 @@ header:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 10%; /* Usar porcentagem para um padding mais responsivo */
+    padding: 15px 10% 0px; /* Usar porcentagem para um padding mais responsivo */
     background-color: #ffffff; /* Fundo neutro para a seção */
 }
 
@@ -180,6 +184,7 @@ header:hover {
 
 .logo:hover {
     transform: scale(1.1); /* Aumenta o tamanho da logo em 10% */
+    filter: brightness(1.2); /* Dá um brilho ao passar o mouse */
 }
 
 /* Media Query para telas menores */
@@ -192,6 +197,7 @@ header:hover {
     }
 
     .logo {
+        margin-top: 20px;
         max-width: 250px; /* Pode ajustar o tamanho da logo em telas pequenas */
     }
 }
@@ -248,7 +254,6 @@ header:hover {
     font-family: 'Arial', sans-serif; /* Fonte simples e sem necessidade de link externo */
     color: #01264b; /* Azul Marinho */
     text-align: center; /* Centraliza a mensagem */
-    margin-top: 30px;
     font-weight: 600; /* Deixa a fonte mais forte */
     letter-spacing: 1px; /* Aumenta o espaçamento entre as letras */
     text-transform: uppercase; /* Transforma o texto para maiúsculas */
@@ -482,7 +487,7 @@ main {
 
 .about-insurer h3 {
     text-align: center;
-    margin: 50px 20px 30px; /* Margens superior e inferior */
+    margin: 50px 20px 20px; /* Margens superior e inferior */
     font-size: 30px; /* Tamanho do subtítulo */
     color: #333; /* Cor do texto do subtítulo */
     position: relative; /* Para posicionar as linhas */
@@ -550,7 +555,7 @@ main {
     display: flex; /* Usar flexbox para alinhar horizontalmente */
     flex-wrap: wrap; /* Permite que os itens se movam para a linha de baixo, se necessário */
     justify-content: center; /* Centraliza os itens na linha */
-    margin-top: 20px; /* Espaçamento superior */
+    margin-top: 30px; /* Espaçamento superior */
 }
 
 .benefit-box {
@@ -703,48 +708,115 @@ main {
 
 footer {
     color: rgb(0, 0, 0);
-    background-color: #01264b83;
+    background-color: #01264bb6;
     padding: 10px; /* Aumenta o padding para melhor espaçamento */
     text-align: center;
     position: relative;
     width: 100%; /* Largura total */
 }
 
-footer .info-seguradora {
-    padding: 20px;
-    text-align: center; /* Centraliza o texto */
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Espaça os elementos com a logo, linha separadora e info-seguradora */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza o conteúdo dentro do footer */
+}
+
+.footer-logo img {
+    text-align: center;
+    max-width: 250px; /* Ajuste o tamanho da logo */
+    height: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+}
+
+.footer-logo img:hover {
+    transform: scale(1.1); /* Aumenta a logo para chamar atenção */
+    filter: brightness(1.2); /* Dá um brilho ao passar o mouse */
+}
+.separator {
+    height: 200px;
+    border-left: 2px solid #fff; /* Linha separadora vertical */
+}
+
+.info-seguradora {
+    color: #fff;
+    font-size: 14px;
+}
+
+.info-seguradora h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-item img {
+    margin-right: 10px;
 }
 
 .social-media {
     display: flex;
-    flex-wrap: wrap; /* Permite que os botões se ajustem e quebrem para a próxima linha se necessário */
     justify-content: center;
-    margin-bottom: 10px;
+    margin-top: 20px;
 }
 
-.social-button-whatsapp,
-.social-button-instagram{
+.social-button {
+    margin: 10px 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 120px; /* Largura do botão */
-    height: 40px; /* Altura do botão */
-    margin: 10px; /* Espaçamento menor entre os botões */
-    color: white;
-    text-decoration: none;
-    border-radius: 5px; /* Bordas arredondadas */
-    transition: background-color 0.3s;
 }
 
 .social-media img {
-    width: 40px; /* Largura do ícone */
-    height: 40px; /* Altura do ícone */
-    margin-right: 10px; /* Espaçamento entre ícone e texto */
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-media a:hover img {
+    transform: scale(1.1); /* Aumenta o tamanho do ícone ao passar o mouse */
+}
+
+footer p{
+    color: white;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .separator {
+        display: none; /* Remove a linha vertical em telas pequenas */
+    }
+
+    .info-seguradora {
+        text-align: center; /* Centraliza o texto das informações */
+        margin-top: 20px;
+    }
+
+    .info-container {
+        align-items: normal ; /* Alinha os itens ao centro em telas pequenas */
+    }
 }
 
 .whatsapp-button {
     position: fixed;
-    bottom: 80px; /* Ajuste para que o botão do WhatsApp fique acima do botão de telefone */
+    bottom: 105px; /* Ajuste para que o botão do WhatsApp fique acima do botão de telefone */
     right: 20px;
     background-color: #25D366; /* Cor verde do WhatsApp */
     border-radius: 50%;
@@ -764,7 +836,7 @@ footer .info-seguradora {
 
 .phone-button-side {
     position: fixed;
-    bottom: 16px; /* Fica abaixo do botão do WhatsApp */
+    bottom: 45px; /* Fica abaixo do botão do WhatsApp */
     right: 20px;
     background-color: #01264b; /* Cor azul do botão de telefone */
     border-radius: 50%;
@@ -811,40 +883,5 @@ footer .info-seguradora {
     100% {
         transform: scale(1);
         opacity: 1;
-    }
-}
-
-
-.back-to-top {
-    position: absolute; /* Fixa o botão na tela */
-    left: 20px; /* Distância da esquerda */
-    bottom: 20px; /* Distância do fundo para não sobrepor o footer */
-    background-color: transparent; /* Fundo transparente */
-    border: none; /* Sem borda */
-    cursor: pointer; /* Muda o cursor ao passar o mouse */
-    z-index: 1000; /* Fixa acima de outros elementos */
-    animation: pulse 2s infinite; /* Adiciona a animação de pulsação */
-}
-
-.back-to-top img {
-    width: 40px; /* Largura do ícone */
-    height: 40px; /* Altura do ícone */
-    transition: transform 0.3s; /* Efeito de transição */
-}
-
-.back-to-top:hover img {
-    transform: scale(1.1); /* Aumenta o ícone ao passar o mouse */
-}
-
-/* Animação de pulsação */
-@keyframes pulse {
-    0% {
-        transform: scale(1); /* Começa no tamanho normal */
-    }
-    50% {
-        transform: scale(1.1); /* Aumenta para 110% no meio da animação */
-    }
-    100% {
-        transform: scale(1); /* Retorna ao tamanho normal */
     }
 }
