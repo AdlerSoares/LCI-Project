@@ -218,7 +218,7 @@ header:hover {
 
 .welcome-message {
     font-size: 36px; /* Tamanho maior para dar mais presença */
-    font-family: 'Arial', sans-serif; /* Fonte simples e sem necessidade de link externo */
+    font-family: 'Arial', sans-serif;
     color: #01264b; /* Azul Marinho */
     text-align: center; /* Centraliza a mensagem */
     font-weight: 600; /* Deixa a fonte mais forte */
@@ -241,7 +241,7 @@ header:hover {
     border-radius: 3px;
     transform: scaleX(0);
     transform-origin: bottom right;
-    animation: slideIn 10s ease-in-out infinite; /* Tempo de animação reduzido para 1 segundo */
+    animation: slideIn 10s ease-in-out infinite; 
 }
 
 @keyframes slideIn {
