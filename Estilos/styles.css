@@ -188,6 +188,20 @@ header:hover {
 }
 
 /* Media Query para telas menores */
+@media (max-width: 920px) and (min-width: 769px) {
+    .header-content {
+        flex-direction: row; /* Mantém o layout em linha (horizontal) */
+        padding: 30px; /* Ajuste do padding para telas intermediárias */
+        padding-top: 80px; /* Um pouco menos de padding no topo do que em telas pequenas */
+        align-items: center; /* Centraliza os itens */
+        justify-content: space-between; /* Distribui os itens de maneira equilibrada */
+    }
+
+    .logo {
+        margin-top: 0;
+        max-width: 250px; /* Ajusta o tamanho da logo para telas médias */
+    }
+}
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column; /* Muda para coluna em telas menores */
@@ -202,53 +216,6 @@ header:hover {
     }
 }
 
-/* Estilo do contato (telefone) */
-.contact-info {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    right: 20px;
-    top: 15px;
-    color: white;
-    flex-wrap: wrap;
-}
-
-.phone-number {
-    margin-left: 5px;
-    white-space: nowrap;
-    font-size: 14px;
-    line-height: 1.5;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: white; /* Cor do número de telefone */
-    transition: transform 0.3s ease, color 0.3s ease; /* Suaviza a transformação e a cor */
-}
-
-/* Retira o sublinhado do link */
-.contact-info a {
-    text-decoration: none; /* Remove o sublinhado do link */
-}
-
-/* Efeito de destaque ao passar o mouse */
-.phone-number:hover {
-    transform: translateY(-3px); /* Move ligeiramente para cima */
-    color: #000000; /* Cor de destaque (laranja) */
-}
-
-.phone-icon {
-    margin-top: 2px;
-}
-
-@media (max-width: 900px) {
-    .phone-number {
-        font-size: 0px;
-        max-width: 0px;
-    }
-    .phone-icon {
-        width: 0px;
-        height: 0px;
-    }
-}
 .welcome-message {
     font-size: 36px; /* Tamanho maior para dar mais presença */
     font-family: 'Arial', sans-serif; /* Fonte simples e sem necessidade de link externo */
@@ -708,7 +675,7 @@ main {
 
 footer {
     color: rgb(0, 0, 0);
-    background-color: #01264bb6;
+    background-color: #01264b83;
     padding: 10px; /* Aumenta o padding para melhor espaçamento */
     text-align: center;
     position: relative;
@@ -726,7 +693,6 @@ footer {
 .footer-logo img {
     text-align: center;
     max-width: 250px; /* Ajuste o tamanho da logo */
-    height: auto;
     transition: transform 0.3s ease, filter 0.3s ease;
     cursor: pointer;
 }
@@ -751,6 +717,7 @@ footer {
 }
 
 .info-container {
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -811,6 +778,10 @@ footer p{
 
     .info-container {
         align-items: normal ; /* Alinha os itens ao centro em telas pequenas */
+    }
+
+    .info-item {
+        text-decoration: none; /* Remove o sublinhado */
     }
 }
 
