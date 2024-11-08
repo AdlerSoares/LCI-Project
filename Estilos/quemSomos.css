@@ -1,0 +1,69 @@
+.content-weare {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Aumentando o espaçamento entre os parágrafos */
+}
+
+.content-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px; /* Espaçamento entre a imagem e o texto */
+}
+
+/* Estilizando o texto dos parágrafos */
+.content-text {
+    flex: 1;
+    background-color: #f9f9f9; /* Fundo sutil para destacar o texto */
+    padding: 20px;
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-left: 4px solid #2C3E50; /* Borda esquerda discreta para destacar */
+}
+
+.content-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin: 0;
+    color: #333;
+}
+
+/* Estilo das imagens */
+.content-image {
+    width: 100%;
+    max-width: 400px; /* Ajuste para que a imagem tenha o tamanho adequado */
+    height: auto;
+    border-radius: 8px; /* Bordas arredondadas para as imagens também */
+    transition: transform 0.3s ease-in-out; /* Animação suave ao passar o mouse */
+}
+/* Padrão para os alinhamentos */
+.left {
+    flex-direction: row;
+}
+
+.right {
+    flex-direction: row-reverse; /* Imagem à esquerda no segundo parágrafo */
+}
+
+/* Separação entre parágrafos (linha fina e discreta) */
+.content-text + .content-text {
+    border-top: 1px solid #ddd; /* Linha de separação sutil */
+    padding-top: 20px; /* Espaçamento entre o conteúdo e a linha */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .content-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .content-item p {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .content-image {
+        max-width: 100%;
+    }
+}
