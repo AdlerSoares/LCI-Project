@@ -1,0 +1,165 @@
+/* Estilo para o container das boxes */
+.services {
+    display: flex;
+    justify-content: center; /* Centraliza as boxes horizontalmente */
+    align-items: flex-start; /* Alinha as boxes no topo da área disponível */
+    padding: 20px;
+    gap: 30px; /* Espaçamento entre as boxes */
+    width: 100%;
+    box-sizing: border-box; /* Garante que o padding não afete o tamanho total */
+    flex-wrap: wrap; /* Permite que as boxes se reorganizem quando necessário */
+    align-items: stretch; /* Faz com que as boxes ocupem toda a largura disponível */
+}
+
+/* Estilo básico para as boxes */
+.service-saude,
+.service-previdencia,
+.service-empresarial,
+.service-veicular {
+    flex: 1 1 22%; /* Flexível: cada box ocupa no mínimo 22% da largura disponível */
+    padding: 25px;
+    border-radius: 18px; /* Bordas mais arredondadas e charmosas */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Sombra suave para dar destaque */
+    transition: transform 0.4s ease, box-shadow 0.3s ease; /* Transição suave para os efeitos de hover */
+    cursor: pointer;
+    text-align: center;
+    color: #000000; /* Cor do texto */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha o conteúdo da box ao longo da altura */
+    transform: translateY(0); /* Inicialmente as boxes estão na posição normal */
+    min-height: 350px; /* Altura mínima para garantir que o conteúdo seja visível */
+    border: 1px solid #01264b83; /* Borda sólida */
+    position: relative;
+    overflow: hidden; /* Esconde qualquer parte externa */
+    background-size: cover; /* Deixa o fundo das boxes mais dinâmico */
+    background-position: center;
+    opacity: 1; /* Opacidade normal para todas as boxes */
+    background: linear-gradient(to bottom, #e6e6e6, #c4c4c4); /* Gradiente suave */
+}
+
+/* Estilo específico para as boxes (apenas o fundo e o gradiente) */
+.service-saude,
+.service-previdencia,
+.service-empresarial,
+.service-veicular {
+    background: linear-gradient(to bottom, #e6e6e6, #d3d3d3); /* Gradiente mais suave */
+}
+
+/* Estilo para os títulos dentro das boxes */
+.services h4 {
+    font-size: 1.5rem; /* Tamanho da fonte do título */
+    font-weight: 700; /* Peso de fonte mais pesado */
+    color: #333; /* Cor do texto */
+    margin-bottom: 20px; /* Distância entre o título e o conteúdo */
+    text-transform: uppercase; /* Letras maiúsculas */
+    letter-spacing: 2px; /* Aumenta o espaçamento entre as letras */
+    padding: 12px 18px; /* Padding extra para o título */
+    border-bottom: 2px solid #000; /* Linha de separação */
+    transition: transform 0.3s ease, color 0.3s ease; /* Transição para animação de hover */
+}
+
+/* Efeito de hover nas boxes - deixa a box em foco levemente maior */
+.services .service-saude:hover,
+.services .service-previdencia:hover,
+.services .service-empresarial:hover,
+.services .service-veicular:hover {
+    background: linear-gradient(to bottom, #fc9357ec, #f88949); /* Gradiente de fundo no hover */
+    color: white; /* Cor do texto no hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+    transform: translateY(-5px); /* Levanta a caixa ao passar o mouse */
+}
+
+/* Responsividade para telas menores (acima de 1024px e abaixo de 1440px) */
+@media (max-width: 1440px) and (min-width: 1024px) {
+    .services {
+        justify-content: flex-start; /* As boxes começam a ser alinhadas no topo em telas médias */
+        gap: 20px; /* Espaçamento reduzido */
+    }
+
+    .service-saude,
+    .service-previdencia,
+    .service-empresarial,
+    .service-veicular {
+        width: 48%; /* Cada box ocupa 48% da largura disponível */
+        padding: 20px; /* Ajuste no padding */
+        min-height: 300px; /* Altura mínima ajustada */
+    }
+
+    .services h4 {
+        font-size: 1.4rem; /* Ajusta o tamanho do título */
+    }
+}
+/* Responsividade para telas menores (de 480px a 768px) */
+@media (max-width: 768px) {
+    .services {
+        flex-direction: column; /* As boxes empilham-se verticalmente */
+        gap: 15px; /* Ajusta o espaçamento entre as boxes */
+        padding: 15px; /* Ajusta o padding do container */
+    }
+
+    .service-saude,
+    .service-previdencia,
+    .service-empresarial,
+    .service-veicular {
+        width: 100%; /* As boxes ocupam toda a largura disponível */
+        padding: 15px; /* Ajusta o padding das boxes */
+    }
+
+    .services h4 {
+        font-size: 1.4rem; /* Ajusta o tamanho do título para telas pequenas */
+    }
+}
+
+/* Responsividade para telas muito pequenas (ex: celulares) */
+@media (max-width: 480px) {
+    .services {
+        padding: 10px; /* Reduz o padding para telas muito pequenas */
+        gap: 10px; /* Reduz o espaçamento entre as boxes */
+    }
+
+    .service-saude,
+    .service-previdencia,
+    .service-empresarial,
+    .service-veicular {
+        width: 100%; /* As boxes ocupam toda a largura disponível */
+        padding: 10px; /* Ajusta o padding das boxes */
+        min-height: 300px; /* Ajusta a altura mínima das boxes */
+    }
+
+    .services h4 {
+        font-size: 1.2rem; /* Ajusta o tamanho do título para telas muito pequenas */
+    }
+}
+
+/* Estilo para os links dentro das boxes */
+.services a {
+    color: inherit; /* Mantém a cor do texto original */
+    text-decoration: none; /* Remove o sublinhado do link */
+}
+
+/* Efeito de hover para os links dentro das boxes */
+.services a {
+    position: relative; /* Necessário para o posicionamento do ::after */
+    color: inherit; /* Mantém a cor do link (herdando da cor de texto original) */
+    text-decoration: none; /* Remove o sublinhado padrão */
+}
+
+.services a::after {
+    content: ''; /* Cria um pseudo-elemento vazio */
+    position: absolute; /* Posiciona o elemento dentro do link */
+    left: 0; /* Começa à esquerda */
+    bottom: 0; /* Posiciona a linha no fundo */
+    width: 100%; /* A linha terá o mesmo comprimento do texto */
+    height: 2px; /* Espessura da linha */
+    background-color: #000; /* Cor da linha */
+    transform: scaleX(0); /* Começa invisível (linha em 0% de largura) */
+    transform-origin: bottom right; /* A linha vai crescer da direita para a esquerda */
+    transition: transform 0.7s ease-out; /* A animação de crescimento da linha */
+}
+
+/* Quando o mouse passa sobre o link, a linha se expande da esquerda para a direita */
+.services a:hover::after {
+    transform: scaleX(1); /* A linha vai se expandir para 100% da largura */
+    transform-origin: bottom left; /* A linha vai crescer da esquerda para a direita */
+}
