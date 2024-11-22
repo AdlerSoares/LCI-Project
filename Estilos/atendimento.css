@@ -63,9 +63,13 @@ div.service-info {
     padding-top: 20px;
 }
 
-div.info-item {
-    font-size: 14px;
-    margin: 30px 0px;
+.info-item1 {
+    flex-direction: auto;
+    display: flex; /* Exibe o ícone e o texto em linha */
+    align-items: center; /* Alinha verticalmente */
+    margin: 10px; /* Espaçamento entre os itens */
+    font-size: 14px; /* Tamanho do texto */
+    margin: 30px 0px
 }
 
 /* Efeito de hover nas boxes */
