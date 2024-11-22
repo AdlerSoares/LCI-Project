@@ -358,6 +358,10 @@ main {
     margin: 30px 70px;
 }
 
+.panel-container a{
+    text-decoration: none;
+}
+
 .panel {
     display: flex;
     align-items: center;
@@ -675,7 +679,7 @@ main {
 
 footer {
     color: rgb(0, 0, 0);
-    background-color: #01264b83;
+    background-color: #011a35da;
     padding: 10px; /* Aumenta o padding para melhor espaçamento */
     text-align: center;
     position: relative;
