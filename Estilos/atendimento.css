@@ -1,7 +1,3 @@
-html {
-    scroll-behavior: smooth;
-}
-
 /* Estilo para o container das boxes */
 .services {
     display: flex;

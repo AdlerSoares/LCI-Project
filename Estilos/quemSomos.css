@@ -1,7 +1,3 @@
-html {
-    scroll-behavior: smooth;
-}
-
 .content-weare {
     display: flex;
     flex-direction: column;
