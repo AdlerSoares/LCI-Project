@@ -214,6 +214,9 @@ header:hover {
         margin-top: 20px;
         max-width: 250px; /* Pode ajustar o tamanho da logo em telas pequenas */
     }
+    #serviços-button {
+        margin-bottom: 15px;
+    }
 }
 
 .welcome-message {
