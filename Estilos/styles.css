@@ -380,7 +380,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column; /* Alinha o ícone em cima do texto em todas as telas */
+    flex-direction: column; 
     width: 350px; /* Largura padrão */
     height: 120px; /* Altura padrão */
     background: linear-gradient(to bottom, #e0e0e0, #bebebe); /* Gradiente mais escuro */
