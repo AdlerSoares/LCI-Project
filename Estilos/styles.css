@@ -14,15 +14,14 @@ body {
     background-color: white;
     color: #333;
 }
-/* Estilos para a Header */
-/* Estilos para a Header */
+
 header {
     position: fixed;
     top: 0;
     left: 50%;
-    transform: translateX(-50%) translateY(-100%); /* Começa fora da tela */
-    width: 90%; /* Definindo largura para que a header não ocupe toda a largura */
-    max-width: 1200px; /* Limita a largura máxima */
+    transform: translateX(-50%) translateY(-100%);
+    width: 90%;
+    max-width: 1200px;
     background-color: #fc9457;
     color: white;
     padding: 15px 0;
@@ -30,18 +29,16 @@ header {
     border-bottom-right-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     z-index: 1000;
-    opacity: 0; /* Inicialmente invisível */
-    transition: transform 0.5s ease, opacity 0.5s ease; /* Transição suave */
-    margin: 0 10px; /* Distância das margens do site */
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    margin: 0 10px;
 }
 
-/* Animação de "caindo do topo" ao carregar */
 header.show {
     opacity: 1;
-    transform: translateX(-50%) translateY(0); /* Fica visível e em sua posição correta */
+    transform: translateX(-50%) translateY(0);
 }
 
-/* Estilos para o conteúdo do menu */
 nav {
     text-align: center;
 }
@@ -55,60 +52,56 @@ nav ul {
     flex-wrap: wrap;
 }
 
-/* Estilos para os itens do menu */
 nav ul li {
     margin: 0 20px;
     display: flex;
     align-items: center;
     position: relative;
-    transition: transform 0.3s ease, color 0.3s ease; /* Animação suave ao passar o mouse */
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Efeito de animação ao passar o mouse sobre o item de menu */
 nav ul li:hover {
-    transform: scale(1.1); /* Aumenta o tamanho ligeiramente */
-    color: #333; /* Altera a cor do texto */
+    transform: scale(1.1);
+    color: #333;
 }
 
-/* Estilo dos links no menu */
 nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
     display: flex;
     align-items: center;
-    transition: color 0.3s ease, transform 0.3s ease; /* Transição para a cor e transformação */
-}
-nav ul li img{
-    margin-right:  3px;
-    margin-bottom: 4px;
-}
-/* Efeito no hover dos links */
-nav ul li a:hover {
-    color: #ffffff; /* Altera a cor do texto quando o mouse está sobre o link */
-    transform: translateX(5px); /* Move ligeiramente o link para a direita */
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Exibe o submenu ao passar o mouse */
+nav ul li img {
+    margin-right: 3px;
+    margin-bottom: 4px;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+    transform: translateX(5px);
+}
+
 nav ul li:hover .submenu {
     display: block;
     opacity: 1;
-    transform: translateY(0); /* Faz o submenu aparecer com um efeito suave */
+    transform: translateY(0);
 }
 
-/* Estilo do submenu */
 .submenu {
     display: none;
     position: absolute;
     top: 100%;
     left: 50%;
-    transform: translateX(-50%) translateY(10px); /* Inicialmente abaixo e com animação suave */
+    transform: translateX(-50%) translateY(10px);
     background-color: #f0f0f0;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Transição suave */
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .submenu li {
@@ -123,37 +116,34 @@ nav ul li:hover .submenu {
     display: block;
 }
 
-/* Estilo para o hover dentro do submenu */
 .submenu li a:hover {
     background: linear-gradient(to bottom, #fc9357ec, #f88949);
     color: white;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px); /* Levanta o item ao passar o mouse */
+    transform: translateY(-5px);
 }
 
-/* Responsividade para telas menores (menor que 768px) */
 @media (max-width: 768px) {
     header {
-        width: 100%; /* Ocupa 100% da largura em telas pequenas */
-        margin: 0; /* Remove a margem lateral */
-        padding-top: 15px; /* Ajuste do padding-top */
-        padding-bottom: 15px; /* Ajuste do padding-bottom */
+        width: 100%;
+        margin: 0;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
 
     nav ul {
-        flex-direction: column; /* Alinha os itens verticalmente */
-        align-items: center; /* Alinha os itens ao centro */
-        width: 100%; /* Garante que a lista ocupe toda a largura da tela */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 
     nav ul li {
-        margin: 10px 0; /* Espaço maior entre os itens no menu */
+        margin: 10px 0;
     }
 
-    /* Estilos para o submenu em telas pequenas */
     .submenu {
-        left: 0; /* Alinha o submenu à esquerda */
-        transform: none; /* Remove a transformação de alinhamento central */
+        left: 0;
+        transform: none;
     }
 
     .contact-info {
@@ -163,7 +153,6 @@ nav ul li:hover .submenu {
     }
 }
 
-/* Efeito de hover na header */
 header:hover {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
@@ -172,65 +161,66 @@ header:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 10% 0px; /* Usar porcentagem para um padding mais responsivo */
-    background-color: #ffffff; /* Fundo neutro para a seção */
+    padding: 15px 10% 0px;
+    background-color: #ffffff;
 }
 
 .logo {
-    max-width: 250px; /* Ajuste conforme o tamanho da sua logo */
-    width: 100%; /* Garante que a logo não exceda a largura do contêiner */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Transição suave para aumentar o tamanho e alterar a opacidade */
+    max-width: 250px;
+    width: 100%;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .logo:hover {
-    transform: scale(1.1); /* Aumenta o tamanho da logo em 10% */
-    filter: brightness(1.2); /* Dá um brilho ao passar o mouse */
+    transform: scale(1.1);
+    filter: brightness(1.2);
 }
 
-/* Media Query para telas menores */
 @media (max-width: 920px) and (min-width: 769px) {
     .header-content {
-        flex-direction: row; /* Mantém o layout em linha (horizontal) */
-        padding: 30px; /* Ajuste do padding para telas intermediárias */
-        padding-top: 80px; /* Um pouco menos de padding no topo do que em telas pequenas */
-        align-items: center; /* Centraliza os itens */
-        justify-content: space-between; /* Distribui os itens de maneira equilibrada */
+        flex-direction: row;
+        padding: 30px;
+        padding-top: 80px;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .logo {
         margin-top: 0;
-        max-width: 250px; /* Ajusta o tamanho da logo para telas médias */
+        max-width: 250px;
     }
 }
+
 @media (max-width: 768px) {
     .header-content {
-        flex-direction: column; /* Muda para coluna em telas menores */
-        padding: 50px; /* Ajusta o padding para telas menores */
+        flex-direction: column;
+        padding: 50px;
         padding-top: 120px;
-        align-items: center; /* Centraliza os itens */
+        align-items: center;
     }
 
     .logo {
         margin-top: 20px;
-        max-width: 250px; /* Pode ajustar o tamanho da logo em telas pequenas */
+        max-width: 250px;
     }
+
     #serviços-button {
         margin-bottom: 15px;
     }
 }
 
 .welcome-message {
-    font-size: 36px; /* Tamanho maior para dar mais presença */
+    font-size: 36px;
     font-family: 'Arial', sans-serif;
-    color: #01264b; /* Azul Marinho */
-    text-align: center; /* Centraliza a mensagem */
-    font-weight: 600; /* Deixa a fonte mais forte */
-    letter-spacing: 1px; /* Aumenta o espaçamento entre as letras */
-    text-transform: uppercase; /* Transforma o texto para maiúsculas */
-    line-height: 1.4; /* Aumenta o espaçamento entre as linhas */
-    position: relative; /* Para a animação do texto */
-    padding: 10px 0; /* Espaçamento interno */
-    transition: all 0.3s ease; /* Transição suave */
+    color: #01264b;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.4;
+    position: relative;
+    padding: 10px 0;
+    transition: all 0.3s ease;
 }
 
 .welcome-message::before {
@@ -240,11 +230,11 @@ header:hover {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(to right, #f78132, #f1b25b); /* Gradiente de fundo */
+    background: linear-gradient(to right, #f78132, #f1b25b);
     border-radius: 3px;
     transform: scaleX(0);
     transform-origin: bottom right;
-    animation: slideIn 10s ease-in-out infinite; 
+    animation: slideIn 10s ease-in-out infinite;
 }
 
 @keyframes slideIn {
@@ -252,34 +242,34 @@ header:hover {
         transform: scaleX(0);
     }
     50% {
-        transform: scaleX(1); /* Linha completamente visível */
+        transform: scaleX(1);
     }
     100% {
-        transform: scaleX(0); /* Linha desaparecendo novamente */
+        transform: scaleX(0);
     }
 }
 
 .button-container {
     text-align: center;
-    margin-top: 30px; /* Espaço acima dos botões */
+    margin-top: 30px;
 }
 
 .button {
     display: inline-block;
-    background-color: #f5f5f5; /* Laranja Claro */
+    background-color: #f5f5f5;
     color: #01264b;
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
-    margin-right: 10px; /* Espaço entre os botões */
+    transition: background-color 0.3s, transform 0.3s;
+    margin-right: 10px;
 }
 
 .button:hover {
-    background: linear-gradient(to bottom, #fc9357ec, #f88949); /* Gradiente de fundo no hover */
-    color: white; /* Cor do texto no hover */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
-    transform: translateY(-5px); /* Levanta a caixa ao passar o mouse */
+    background: linear-gradient(to bottom, #fc9357ec, #f88949);
+    color: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
 }
 
 main {
@@ -299,21 +289,20 @@ main {
 .painel-principal {
     position: relative;
     width: 100%;
-    padding: 3px;  
-    background: linear-gradient(to bottom, #012141, #031930b4); 
-    
+    padding: 3px;
+    background: linear-gradient(to bottom, #012141, #031930b4);
 }
 
 .image-slider {
     position: relative;
-    width: 100%; /* Ajuste para se adaptar a telas menores */
-    max-width: 1200px; /* Largura máxima */
-    height: 400px; /* Altura ajustada para telas menores */
-    margin: 0 auto; /* Centraliza o painel */
-    overflow: hidden; /* Esconde o excesso das imagens */
-    background-color: #f0f0f0; /* Cor de fundo */
-    border: 7px solid #ffffff; /* Borda */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    width: 100%;
+    max-width: 1200px;
+    height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    border: 7px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .slide {
@@ -342,15 +331,14 @@ main {
     opacity: 0; 
 }
 
-/* Media Queries para telas menores */
 @media (max-width: 900px) {
     .image-slider {
-        height: 200px; /* Altura reduzida para telas menores */
+        height: 200px; 
         display: none;
     }
 
     .slide {
-        transition: transform 0.3s ease, opacity 0.3s ease; /* Transições mais rápidas */
+        transition: transform 0.3s ease, opacity 0.3s ease; 
     }
 }
 
@@ -370,8 +358,6 @@ main {
     }
 }
 
-
-
 .panel-container a{
     text-decoration: none;
 }
@@ -381,309 +367,292 @@ main {
     align-items: center;
     justify-content: center;
     flex-direction: column; 
-    width: 350px; /* Largura padrão */
-    height: 120px; /* Altura padrão */
-    background: linear-gradient(to bottom, #e0e0e0, #bebebe); /* Gradiente mais escuro */
+    width: 350px; 
+    height: 120px; 
+    background: linear-gradient(to bottom, #e0e0e0, #bebebe); 
     margin: 25px;
-    border-radius: 10px; /* Borda arredondada para as caixas */
+    border-radius: 10px; 
     font-weight: bold;
     color: #000000;
-    transition: all 0.3s ease-in-out; /* Transição suave para efeitos */
-    padding: 20px; /* Espaçamento interno */
+    transition: all 0.3s ease-in-out; 
+    padding: 20px; 
     box-sizing: border-box;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
 }
 
 .panel-icon {
-    margin-bottom: 15px; /* Aumenta o espaçamento entre o ícone e o texto */
-    transition: transform 0.3s ease; /* Transição suave no efeito de hover */
+    margin-bottom: 15px; 
+    transition: transform 0.3s ease; 
 }
 
 .panel-text {
-    font-size: 18px; /* Aumenta o tamanho da fonte */
+    font-size: 18px; 
     text-transform: uppercase;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Adiciona um pequeno destaque ao texto */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); 
 }
 
-/* Efeito de hover */
 .panel:hover {
-    background: linear-gradient(to bottom, #fc9357ec, #f88949); /* Gradiente de fundo no hover */
-    color: white; /* Cor do texto no hover */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
-    transform: translateY(-5px); /* Levanta a caixa ao passar o mouse */
+    background: linear-gradient(to bottom, #fc9357ec, #f88949); 
+    color: white; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-5px); 
 }
 
 .panel:hover .panel-icon {
-    transform: scale(1.2); /* Aumenta o tamanho do ícone no hover */
+    transform: scale(1.2); 
 }
 
-/* Responsividade */
-
-/* Em telas menores que 768px (tablets e celulares) */
 @media (max-width: 768px) {
     .panel-container {
         margin: 10px;
     }
 
     .panel {
-        width: 250px; /* Diminui a largura nas telas menores */
-        height: 120px; /* Mantém a altura */
+        width: 250px; 
+        height: 120px; 
         margin: 15px;
     }
 
     .panel-icon {
-        margin-bottom: 15px; /* Mantém o espaçamento entre o ícone e o texto */
+        margin-bottom: 15px; 
     }
 
     .panel-text {
-        font-size: 16px; /* Ajusta o tamanho da fonte para telas menores */
+        font-size: 16px; 
     }
 }
 
-/* Em telas menores que 480px (celulares maiores e pequenos) */
 @media (max-width: 480px) {
     .panel {
-        width: 250px; /* Diminui ainda mais a largura nas telas menores */
-        height: 100px; /* Ajusta a altura */
+        width: 250px; 
+        height: 100px; 
         margin: 10px;
     }
 
     .panel-icon {
-        margin-bottom: 8px; /* Reduz o espaçamento entre o ícone e o texto em telas pequenas */
+        margin-bottom: 8px; 
     }
 
     .panel-text {
-        font-size: 14px; /* Tamanho de fonte menor em telas muito pequenas */
+        font-size: 14px; 
     }
 }
 
 .about-insurer {
     padding: 20px;
-    border-radius: 5px; /* Bordas arredondadas */
-    margin: 20px 0; /* Margens superiores e inferiores */
+    border-radius: 5px; 
+    margin: 20px 0; 
 }
 
 .about-insurer h2 {
     text-align: center;
     margin: 10px;
-    font-size: 40px; /* Tamanho do título */
-    color: #01264b; /* Cor do texto do título */
+    font-size: 40px; 
+    color: #01264b; 
 }
 
 .about-insurer h3 {
     text-align: center;
-    margin: 50px 20px 20px; /* Margens superior e inferior */
-    font-size: 30px; /* Tamanho do subtítulo */
-    color: #333; /* Cor do texto do subtítulo */
-    position: relative; /* Para posicionar as linhas */
+    margin: 50px 20px 20px; 
+    font-size: 30px; 
+    color: #333; 
+    position: relative; 
 }
 
 .about-insurer h3::before,
 .about-insurer h3::after {
-    content: ""; /* Necessário para criar uma linha */
+    content: ""; 
     position: absolute;
-    width: 50%; /* Largura da linha */
-    height: 2px; /* Altura da linha */
-    background-color: #01264b83; /* Cor da linha */
+    width: 50%; 
+    height: 2px; 
+    background-color: #01264b83; 
 }
 
 .about-insurer h3::before {
-    top: -10px; /* Distância acima do texto */
-    left: 25%; /* Centraliza a linha */
+    top: -10px; 
+    left: 25%; 
 }
 
 .about-insurer h3::after {
-    bottom: -10px; /* Distância abaixo do texto */
-    left: 25%; /* Centraliza a linha */
+    bottom: -10px; 
+    left: 25%; 
 }
-
 
 .about-insurer p {
-    margin: 20px; /* Aumenta a margem para mais espaço ao redor do parágrafo */
-    font-size: 17px; /* Tamanho do parágrafo */
-    color: #000000; /* Cor do texto do parágrafo */
-    line-height: 1.6; /* Aumenta o espaçamento entre as linhas */
+    margin: 20px; 
+    font-size: 17px; 
+    color: #000000; 
+    line-height: 1.6; 
 }
-
 
 .benefits-list {
     margin: 10px;
-    list-style-type: none; /* Remove marcadores da lista */
-    padding: 0; /* Remove padding */
-    background: linear-gradient(135deg, #f1f1f1, #d1d1d1); /* Gradiente mais forte para a lista */
-    border-radius: 8px; /* Bordas arredondadas para a lista */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra mais forte para dar destaque */
-    padding: 20px; /* Adiciona um pouco de padding ao redor da lista */
+    list-style-type: none; 
+    padding: 0; 
+    background: linear-gradient(135deg, #f1f1f1, #d1d1d1); 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    padding: 20px; 
 }
 
-/* Estilo para os itens da lista */
 .benefits-list li {
     margin: 10px;
-    font-size: 16px; /* Tamanho dos itens da lista */
-    color: #333; /* Cor dos itens da lista */
-    padding-left: 30px; /* Adiciona espaço à esquerda para o ícone */
-    position: relative; /* Para posicionar o ícone */
+    font-size: 16px; 
+    color: #333; 
+    padding-left: 30px; 
+    position: relative; 
 }
 
-/* Estilo para o ícone de verificação */
 .benefits-list li .check-icon {
-    position: absolute; /* Posiciona o ícone na esquerda do texto */
-    left: 10px; /* Espaço à esquerda */
-    top: 50%; /* Centraliza verticalmente */
-    transform: translateY(-50%); /* Ajusta o alinhamento vertical */
-    font-size: 20px; /* Aumenta o tamanho do ícone */
-    color: #00aaff; /* Cor azul para destacar o ícone */
+    position: absolute; 
+    left: 10px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    font-size: 20px; 
+    color: #00aaff; 
 }
 
-/* Caixas de Benefícios */
 .benefits-container {
-    display: flex; /* Usar flexbox para alinhar horizontalmente */
-    flex-wrap: wrap; /* Permite que os itens se movam para a linha de baixo, se necessário */
-    justify-content: center; /* Centraliza os itens na linha */
-    margin-top: 30px; /* Espaçamento superior */
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    margin-top: 30px; 
 }
 
 .benefit-box {
-    display: flex; /* Usa flexbox para alinhar ícone e texto */
-    align-items: center; /* Centraliza verticalmente */
-    background-color: #01274dda; /* Fundo das caixas */
+    display: flex; 
+    align-items: center; 
+    background-color: #01274dda; 
     color: white;
-    border: 1px solid #e0e0e0; /* Borda cinza clara */
-    border-radius: 5px; /* Bordas arredondadas */
-    padding: 15px; /* Espaçamento interno */
-    margin: 10px; /* Margem para espaçamento entre as caixas */
-    flex: 0 1 calc(50% - 20px); /* Cada caixa ocupa 50% da largura menos a margem */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.253); /* Sombra leve */
-    box-sizing: border-box; /* Inclui bordas e padding no cálculo de largura */
-    background: linear-gradient(to right, #01274dea, #01274ddc); /* Gradiente mais forte no fundo */
+    border: 1px solid #e0e0e0; 
+    border-radius: 5px; 
+    padding: 15px; 
+    margin: 10px; 
+    flex: 0 1 calc(50% - 20px); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.253); 
+    box-sizing: border-box; 
+    background: linear-gradient(to right, #01274dea, #01274ddc); 
 }
 
-/* Estilo para telas menores */
 @media (max-width: 768px) {
     .benefit-box {
-        flex: 0 1 calc(100% - 20px); /* Cada caixa ocupa 100% da largura em telas pequenas */
+        flex: 0 1 calc(100% - 20px); 
     }
 }
 
 .check-icon {
-    margin-right: 10px; /* Espaço entre ícone e texto */
+    margin-right: 10px; 
 }
 
 .step-by-step {
-    text-align: center; /* Centraliza o texto */
+    text-align: center; 
 }
 
 .steps-container {
-    display: flex; /* Exibe os passos em linha */
-    justify-content: center; /* Centraliza os passos */
-    align-items: center; /* Alinha verticalmente */
-    flex-wrap: wrap; /* Permite quebra de linha se necessário */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: wrap; 
 }
 
 .step {
-    margin: 20px; /* Espaçamento entre os passos */
-    text-align: center; /* Centraliza o texto dentro de cada passo */
-    flex: 1 1 150px; /* Permite que cada passo se ajuste */
-    max-width: 200px; /* Largura máxima para cada passo */
+    margin: 20px; 
+    text-align: center; 
+    flex: 1 1 150px; 
+    max-width: 200px; 
 }
-
-/* Estilo da bolinha do número */
 .step-number {
-    width: 80px; /* Largura do círculo */
-    height: 80px; /* Altura do círculo */
-    border-radius: 50%; /* Faz o círculo */
-    background-color: #fc9457; /* Cor do círculo */
-    color: rgb(255, 255, 255); /* Cor do número */
-    display: flex; /* Para centralizar o número */
-    align-items: center; /* Alinha verticalmente */
-    justify-content: center; /* Alinha horizontalmente */
-    font-size: 25px; /* Tamanho do texto do número */
-    margin: 0 auto -22px; /* Espaçamento abaixo do círculo */
-    animation: pulse-ball 2s infinite ease-in-out; /* Efeito de pulsação suave */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #fc9457;
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    margin: 0 auto -22px;
+    animation: pulse-ball 2s infinite ease-in-out;
 }
 
-/* Texto do título de cada passo */
 .step h3 {
     font-size: 22px;
     margin: 30px -6px 30px;
-    position: relative; /* Necessário para posicionar a linha abaixo do título */
+    position: relative;
 }
 
-/* Linha abaixo do título */
 .step h3::after {
-    content: ""; /* Necessário para criar uma linha */
+    content: "";
     position: absolute;
-    width: 50%; /* Largura da linha */
-    height: 2px; /* Altura da linha */
-    background-color: #01264b83; /* Cor da linha */
-    bottom: -10px; /* Posiciona a linha um pouco abaixo do título */
+    width: 50%;
+    height: 2px;
+    background-color: #01264b83;
+    bottom: -10px;
     left: 50%;
-    transform: translateX(-50%); /* Centraliza a linha */
+    transform: translateX(-50%);
 }
+
 .step h3::before{
     display: none;
 }
 
-/* Estilo do parágrafo do passo */
 .step p {
     margin: 5px;
-    font-size: 15px; /* Tamanho do texto do passo */
-    color: #000000; /* Cor do texto do passo */
-    max-width: 200px; /* Define uma largura máxima para o parágrafo */
-    line-height: 1.4; /* Aumenta o espaçamento entre linhas para melhor legibilidade */
-    margin-left: auto; /* Alinha o parágrafo ao centro */
-    margin-right: auto; /* Alinha o parágrafo ao centro */
+    font-size: 15px;
+    color: #000000;
+    max-width: 200px;
+    line-height: 1.4;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .info-container {
     padding: 10px;
-    display: flex; /* Exibe as informações em linha */
-    flex-wrap: wrap; /* Permite quebra de linha se necessário */
-    justify-content: center; /* Centraliza os itens */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .info-item {
     flex-direction: auto;
-    display: flex; /* Exibe o ícone e o texto em linha */
-    align-items: center; /* Alinha verticalmente */
-    margin: 10px; /* Espaçamento entre os itens */
-    font-size: 16px; /* Tamanho do texto */
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    font-size: 16px;
 }
 
 .info-icon {
-    margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+    margin-right: 10px;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .steps-container {
-        flex-direction: column; /* Alinha os passos verticalmente */
+        flex-direction: column;
     }
 
     .step {
-        margin: 10px 0; /* Reduz o espaçamento vertical entre os passos */
+        margin: 10px 0;
     }
 
     .step-number {
-        width: 60px; /* Ajusta a largura do círculo */
-        height: 60px; /* Ajusta a altura do círculo */
-        font-size: 20px; /* Ajusta o tamanho do texto do número */
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
     }
 
     .info-item {
-        flex: 1 1 100%; /* Faz com que cada item ocupe toda a largura disponível */
+        flex: 1 1 100%;
     }
 }
 
-/* Efeito de pulsação leve para a bolinha */
 @keyframes pulse-ball {
     0% {
         transform: scale(1);
         opacity: 1;
     }
     50% {
-        transform: scale(1.05); /* Aumenta a bolinha em 5% */
-        opacity: 1.1; /* Leve aumento na opacidade */
+        transform: scale(1.05);
+        opacity: 1.1;
     }
     100% {
         transform: scale(1);
@@ -694,34 +663,35 @@ main {
 footer {
     color: rgb(0, 0, 0);
     background-color: #011a35da;
-    padding: 10px; /* Aumenta o padding para melhor espaçamento */
+    padding: 10px;
     text-align: center;
     position: relative;
-    width: 100%; /* Largura total */
+    width: 100%;
 }
 
 .footer-content {
     display: flex;
-    justify-content: space-between; /* Espaça os elementos com a logo, linha separadora e info-seguradora */
+    justify-content: space-between;
     align-items: center;
     max-width: 1200px;
-    margin: 0 auto; /* Centraliza o conteúdo dentro do footer */
+    margin: 0 auto;
 }
 
 .footer-logo img {
     text-align: center;
-    max-width: 250px; /* Ajuste o tamanho da logo */
+    max-width: 250px;
     transition: transform 0.3s ease, filter 0.3s ease;
     cursor: pointer;
 }
 
 .footer-logo img:hover {
-    transform: scale(1.1); /* Aumenta a logo para chamar atenção */
-    filter: brightness(1.2); /* Dá um brilho ao passar o mouse */
+    transform: scale(1.1);
+    filter: brightness(1.2);
 }
+
 .separator {
     height: 200px;
-    border-left: 2px solid #fff; /* Linha separadora vertical */
+    border-left: 2px solid #fff;
 }
 
 .info-seguradora {
@@ -771,14 +741,13 @@ footer {
 }
 
 .social-media a:hover img {
-    transform: scale(1.1); /* Aumenta o tamanho do ícone ao passar o mouse */
+    transform: scale(1.1);
 }
 
 footer p{
     color: white;
 }
 
-/* Responsividade para telas pequenas */
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
@@ -786,28 +755,28 @@ footer p{
     }
 
     .separator {
-        display: none; /* Remove a linha vertical em telas pequenas */
+        display: none;
     }
 
     .info-seguradora {
-        text-align: center; /* Centraliza o texto das informações */
+        text-align: center;
         margin-top: 20px;
     }
 
     .info-container {
-        align-items: normal ; /* Alinha os itens ao centro em telas pequenas */
+        align-items: normal;
     }
 
     .info-item {
-        text-decoration: none; /* Remove o sublinhado */
+        text-decoration: none;
     }
 }
 
 .whatsapp-button {
     position: fixed;
-    bottom: 105px; /* Ajuste para que o botão do WhatsApp fique acima do botão de telefone */
+    bottom: 105px;
     right: 20px;
-    background-color: #25D366; /* Cor verde do WhatsApp */
+    background-color: #25D366;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -816,7 +785,7 @@ footer p{
     align-items: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     animation: pulse 1s infinite;
-    z-index: 10; /* Garante que o botão do WhatsApp fique acima do telefone */
+    z-index: 10;
 }
 
 .whatsapp-button img {
@@ -825,9 +794,9 @@ footer p{
 
 .phone-button-side {
     position: fixed;
-    bottom: 45px; /* Fica abaixo do botão do WhatsApp */
+    bottom: 45px;
     right: 20px;
-    background-color: #01264b; /* Cor azul do botão de telefone */
+    background-color: #01264b;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -836,30 +805,13 @@ footer p{
     align-items: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     animation: pulse 1s infinite;
-    z-index: 9; /* Fica atrás do botão do WhatsApp */
+    z-index: 9;
 }
 
 .phone-button-side img {
     width: 30px;
 }
 
-/* Animação de pulsação */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.1);
-        opacity: 0.9;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-/* Animação para a pulsação */
 @keyframes pulse {
     0% {
         transform: scale(1);

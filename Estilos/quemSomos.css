@@ -1,24 +1,24 @@
 .content-weare {
     display: flex;
     flex-direction: column;
-    gap: 40px; /* Aumentando o espaçamento entre os parágrafos */
+    gap: 40px;
 }
 
 .content-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px; /* Espaçamento entre a imagem e o texto */
+    gap: 20px; 
 }
 
-/* Estilizando o texto dos parágrafos */
+
 .content-text {
     flex: 1;
-    background-color: #f9f9f9; /* Fundo sutil para destacar o texto */
+    background-color: #f9f9f9; 
     padding: 20px;
-    border-radius: 8px; /* Bordas arredondadas */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    border-left: 4px solid #2C3E50; /* Borda esquerda discreta para destacar */
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #2C3E50; 
 }
 
 .content-text p {
@@ -28,30 +28,30 @@
     color: #333;
 }
 
-/* Estilo das imagens */
+
 .content-image {
     width: 100%;
-    max-width: 400px; /* Ajuste para que a imagem tenha o tamanho adequado */
+    max-width: 400px; 
     height: auto;
-    border-radius: 8px; /* Bordas arredondadas para as imagens também */
-    transition: transform 0.3s ease-in-out; /* Animação suave ao passar o mouse */
+    border-radius: 8px; 
+    transition: transform 0.3s ease-in-out; 
 }
-/* Padrão para os alinhamentos */
+
 .left {
     flex-direction: row;
 }
 
 .right {
-    flex-direction: row-reverse; /* Imagem à esquerda no segundo parágrafo */
+    flex-direction: row-reverse; 
 }
 
-/* Separação entre parágrafos (linha fina e discreta) */
+
 .content-text + .content-text {
-    border-top: 1px solid #ddd; /* Linha de separação sutil */
-    padding-top: 20px; /* Espaçamento entre o conteúdo e a linha */
+    border-top: 1px solid #ddd; 
+    padding-top: 20px; 
 }
 
-/* Responsividade para telas menores */
+
 @media (max-width: 768px) {
     .content-item {
         flex-direction: column;

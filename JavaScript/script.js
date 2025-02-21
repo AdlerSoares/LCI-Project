@@ -3,20 +3,16 @@ const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Garante que a página inicie no topo (header)
     window.scrollTo(0, 0);
 
-    // Lógica para inicializar a rotação de slides
     showSlide(currentIndex);
 
-    // Lógica de clique no botão "Seguros e Produtos"
     const button = document.getElementById('serviços-button');
     if (button) {
         button.addEventListener('click', handleScrollToSection);
     }
 });
 
-// Exibe o slide atual e ajusta os outros
 function showSlide(index) {
     slides.forEach((slide, i) => {
         slide.classList.remove('active', 'next', 'prev');
@@ -36,13 +32,11 @@ function nextSlide() {
     showSlide(currentIndex);
 }
 
-// Muda a imagem a cada 10 segundos
+
 setInterval(nextSlide, 10000);
 
-// Seleciona a header
 const header = document.querySelector('header');
 
-// Função para verificar a posição do scroll e controlar a visibilidade da header
 function checkScroll() {
     if (window.scrollY > 50) {
         header.classList.remove('show');
@@ -51,19 +45,19 @@ function checkScroll() {
     }
 }
 
-// Chama a função assim que a página carrega para mostrar a header
+
 window.addEventListener('load', () => {
     setTimeout(() => {
-        header.classList.add('show'); // Animação de "cair" da header
+        header.classList.add('show'); 
     }, 200);
 });
 
-// A cada rolagem, verifica a posição do scroll
+
 window.addEventListener('scroll', checkScroll);
 
-// Lida com o clique no botão "Seguros e Produtos"
+
 function handleScrollToSection(event) {
-    event.preventDefault(); // Previne o comportamento padrão de navegação
+    event.preventDefault(); 
 
     // Verifica se estamos na página principal
     if (window.location.pathname === "/index.html" || window.location.pathname === "/") {
@@ -71,8 +65,8 @@ function handleScrollToSection(event) {
         const targetSection = document.getElementById('serviços-produtos');
         if (targetSection) {
             window.scrollTo({
-                top: targetSection.offsetTop, // Rola até a posição da seção
-                behavior: 'smooth' // Define o scroll suave
+                top: targetSection.offsetTop, 
+                behavior: 'smooth' 
             });
         }
     } else {
@@ -88,8 +82,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const targetSection = document.querySelector(window.location.hash);
         if (targetSection) {
             window.scrollTo({
-                top: targetSection.offsetTop, // Rola até a posição da seção
-                behavior: 'smooth' // Rolagem suave
+                top: targetSection.offsetTop, 
+                behavior: 'smooth' 
             });
 
             // Remove o hash da URL para evitar comportamento indesejado de navegação
@@ -99,9 +93,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.getElementById('footer-logo-link').addEventListener('click', function(event) {
-    event.preventDefault(); // Previne o comportamento padrão do link
+    event.preventDefault(); 
     window.scrollTo({
-        top: 0, // Rola até o topo da página
-        behavior: 'smooth' // Rolagem suave
+        top: 0, 
+        behavior: 'smooth' 
     });
 });
